@@ -5,7 +5,9 @@ import { buildResolvers } from "./buildResolvers";
 import { buildPlugins } from "./buildPlugins";
 import { buildDevServer } from "./buildDevServer";
 
-export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
+export function buildWebpackConfig(
+  options: BuildOptions
+): webpack.Configuration {
   return {
     mode: options.mode,
     entry: options.paths.entry,
@@ -19,7 +21,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     },
     resolve: buildResolvers(options.paths),
     plugins: buildPlugins(options.paths),
-    devServer: buildDevServer(options),
-    devtool: "inline-source-map",
+    devServer: options.isDev ? buildDevServer(options) : undefined,
+    devtool: options.isDev ? "inline-source-map" : undefined,
   };
 }

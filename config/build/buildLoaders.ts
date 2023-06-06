@@ -8,5 +8,10 @@ export function buildLoaders({}: BuildPaths): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [tsLoader];
+  const sassLoader = {
+    test: /\.s[ac]ss$/i,
+    use: ["style-loader", "css-loader", "sass-loader"],
+  };
+
+  return [tsLoader, sassLoader];
 }
