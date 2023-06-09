@@ -2,16 +2,18 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ["standard-with-typescript", "plugin:react/recommended"],
   parserOptions: {
-    project: ["tsconfig.json"],
+    project: "./tsconfig.json",
     ecmaVersion: "latest",
     sourceType: "module",
   },
   parser: "@typescript-eslint/parser",
   plugins: ["react"],
   rules: {
+    "max-len": [2, { ignoreComments: true }],
     "react/jsx-indent": [2, 2],
     "react/react-in-jsx-scope": [0],
     "@typescript-eslint/strict-boolean-expressions": [0],
