@@ -14,6 +14,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
 
   return (
     <div
+        data-testid="sidebar"
       className={cn(styles.sidebar, {
         [styles.collapsed]: collapsed
       })}
