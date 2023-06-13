@@ -14,6 +14,8 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...rest
 }) => {
+  console.log('hello')
+
   return (
     <button
       className={cn(styles.button, className, {
