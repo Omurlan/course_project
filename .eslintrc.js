@@ -34,6 +34,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': [1],
     '@typescript-eslint/naming-convention': [0],
     '@typescript-eslint/no-unused-vars': [1],
+    '@typescript-eslint/consistent-type-assertions': [1],
     'react/display-name': [1]
   },
   globals: {

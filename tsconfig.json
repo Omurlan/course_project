@@ -17,7 +17,7 @@
       "*": ["./src/*"]
     }
   },
-  "include": [".eslintrc.js", "config", "src", "webpack.config.ts"],
+  "include": [".eslintrc.js", "config", "src", "webpack.config.ts", "scripts"],
   "exclude": ["node_modules"],
   "ts-node": {
     "compilerOptions": {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './AppLink.module.scss'
 import cn from 'classnames'
-import { Link, type LinkProps } from 'react-router-dom'
+import { Link, type LinkProps, NavLink } from 'react-router-dom'
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',

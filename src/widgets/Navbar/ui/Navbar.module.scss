@@ -1,9 +1,15 @@
 .navbar {
+  position: relative;
   display: flex;
   gap: 15px;
   width: 100%;
   height: var(--navbar-height);
-  background: var(--primary-color);
+  background: var(--navbar-color);
   align-items: center;
-  justify-content: flex-end;
+  padding: 0 20px;
+
+  .burgerIcon {
+    font-size: 25px;
+    cursor: pointer;
+  }
 }
