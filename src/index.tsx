@@ -5,17 +5,19 @@ import { ThemeProvider } from 'app/providers/ThemeProvider'
 import 'shared/config/i18n/i18n'
 import { ErrorBoundary } from 'app/providers/ErrorBoundary'
 import { SidebarProvider } from 'app/providers/SidebarProvider'
+import { StoreProvider } from 'app/providers/StoreProvider'
 
 render(
-  <BrowserRouter>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <SidebarProvider>
-          <App />
-        </SidebarProvider>
-      </ThemeProvider>
-
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <SidebarProvider>
+            <App />
+          </SidebarProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
   document.getElementById('root')
 )

@@ -1,0 +1,19 @@
+.modal {
+  position: absolute;
+  width: fit-content;
+  background: var(--sidebar-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0 0 0 / 22%);
+  backdrop-filter: blur(2px);
+}

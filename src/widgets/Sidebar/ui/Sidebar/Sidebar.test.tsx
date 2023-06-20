@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { Sidebar } from 'widgets/Sidebar'
+import { renderWithRouter } from 'shared/config/storybook/renderWithRouter'
 
 describe('sidebar', () => {
   test('exist', () => {
-    render(<Sidebar />)
+    renderWithRouter(<Sidebar />)
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
   })
 })

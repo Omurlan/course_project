@@ -16,6 +16,7 @@ module.exports = {
     sourceType: 'module'
   },
   root: true,
+  ignorePatterns: ['json-server/*.js'],
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint'],
   rules: {
@@ -23,7 +24,7 @@ module.exports = {
       2,
       {
         ignoreComments: true,
-        code: 100
+        code: 120
       }
     ],
     'react/jsx-indent': [2, 2],
