@@ -11,4 +11,24 @@
   --navbar-height: 50px;
   --sidebar-width: 220px;
   --sidebar-width-collapsed: 80px;
+
+  // z-index
+  --z-index-normal: 12;
+  --z-index-important: 13;
+  --z-index-overlay: 14;
+
+  // тени
+  --shadow-normal: 0 7px 10px rgba(0 0 0 / 10%);
+  --shadow-modal: 0 2px 6px rgba(0 0 0 / 20%);
+
+  // границы
+  --border-radius: 4px;
+
+  //  Отступы
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
 }

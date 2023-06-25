@@ -4,8 +4,11 @@
 @import "themes/dark";
 @import "themes/light";
 
-.app {
+body {
   font: var(--font-m);
+}
+
+.app {
   background: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
@@ -16,7 +19,7 @@
   padding-left: var(--sidebar-width);
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 860px) {
   .content-page {
     padding-left: 0;
   }
@@ -24,5 +27,5 @@
 
 .page-wrapper {
   flex-grow: 1;
-  padding: 20px;
+  padding: var(--spacing-lg);
 }

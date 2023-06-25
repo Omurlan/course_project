@@ -1,10 +1,19 @@
-.app.dark {
+body.dark {
   --text-color: white;
-  --bg-color: #292a33;
-  --sidebar-color: #343541;
+  --text-color-dark: #242424;
+  --text-color-placeholder: #adadad;
+  --text-color-label: #686868;
+  --bg-color: #1f1f1f;
+  --sidebar-color: #e1ecc8;
+  --error-color: #c4314b;
   --sidebar-active-link-color: rgb(255 255 255 / 15%);
-  --navbar-color: #48495b;
+  --navbar-color: #393646;
   --bg-color-reverse: #a83535;
-  --primary-color: #ececf2;
+  --primary-color: #4f52b2;
+  --primary-color-hover: #5b5fc7;
+  --primary-color-pressed: #464775;
+  --gray: #c7c7c7;
+  --gray-light: #ebebeb;
+  --bg-color-input: #292929;
   --secondary-color: #ececf2;
 }

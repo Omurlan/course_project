@@ -6,20 +6,26 @@ type Themes = 'clear'
 
 interface ButtonProps extends ComponentProps<'button'> {
   theme?: Themes
+  variant?: 'neutral' | 'default' | 'outline' | 'ghost'
+  size?: 'small'
 }
 
 export const Button: React.FC<ButtonProps> = ({
   className,
   theme,
+  size = 'default',
+  variant = 'default',
   children,
   ...rest
 }) => {
-  console.log('hello')
-
   return (
     <button
       className={cn(styles.button, className, {
-        [styles.clear]: theme === 'clear'
+        [styles.small]: size === 'small',
+        [styles.neutral]: variant === 'neutral',
+        [styles.outline]: variant === 'outline',
+        [styles.ghost]: variant === 'ghost',
+        [styles.default]: variant === 'default'
       })}
       {...rest}
     >

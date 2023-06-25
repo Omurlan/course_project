@@ -1,11 +1,13 @@
 .modal {
   position: absolute;
-  width: fit-content;
-  background: var(--sidebar-color);
+  width: 350px;
+  background: var(--bg-color);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-modal);
 }
 
 .overlay {
@@ -16,4 +18,11 @@
   right: 0;
   background: rgb(0 0 0 / 22%);
   backdrop-filter: blur(2px);
+  z-index: var(--z-index-overlay);
+}
+
+@media screen and (max-width: 400px) {
+  .modal {
+    width: 90%;
+  }
 }

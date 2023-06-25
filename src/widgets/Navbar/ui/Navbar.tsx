@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <div className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
 
-      <Button onClick={handelShowModal}>Войти</Button>
+      <Button size="small" onClick={handelShowModal}>Войти</Button>
 
       <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} />
     </div>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Sidebar.module.scss'
 import cn from 'classnames'
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
+import { ThemeSwitcher } from '../../../ThemeSwitcher'
 import AppLink from 'shared/ui/Link/AppLink'
 import { BiHomeAlt2 as HomeIcon } from 'react-icons/bi'
 import { AiOutlineInfoCircle as AboutIcon } from 'react-icons/ai'
@@ -33,27 +33,29 @@ interface SidebarProps {}
 export const Sidebar: React.FC<SidebarProps> = () => {
   const { pathname } = useLocation()
 
-  const [collapsed, setCollapsed] = useState(false)
-
-  const { open } = useSidebar()
+  const { open, toggleState } = useSidebar()
 
   return (
     <div
         data-testid="sidebar"
       className={cn(styles.sidebar, {
-        [styles.collapsed]: open
+        [styles.collapsed]: !open
       })}
     >
-      <div className={styles.list}>
+      <span onClick={toggleState} className={styles.background} />
+
+      <ul className={styles.list}>
         {sidebarRoutes.map(({ Icon, path, title }) => (
-          <AppLink key={title} className={cn(styles.item, {
-            [styles.active]: path === pathname
-          })} to={path}>
-            <Icon />
-            {title}
-          </AppLink>
+          <li key={path}>
+            <AppLink key={title} className={cn(styles.item, {
+              [styles.active]: path === pathname
+            })} to={path}>
+              <Icon />
+              {title}
+            </AppLink>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <div className={styles.switchers}>
         <ThemeSwitcher />
