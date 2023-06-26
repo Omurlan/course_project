@@ -1,10 +1,18 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect, useLayoutEffect } from 'react'
 import './styles/index.scss'
 import Router from 'app/router/ui/Router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
+import { useDispatch } from 'react-redux'
+import { userActions } from 'entities/User'
 
-const MyComponent = () => {
+const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData())
+  }, [])
+
   return (
     <div className='app'>
       <Suspense fallback="">
@@ -21,4 +29,4 @@ const MyComponent = () => {
   )
 }
 
-export default MyComponent
+export default App

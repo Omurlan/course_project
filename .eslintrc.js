@@ -24,7 +24,7 @@ module.exports = {
       2,
       {
         ignoreComments: true,
-        code: 120
+        code: 140
       }
     ],
     'react/jsx-indent': [2, 2],

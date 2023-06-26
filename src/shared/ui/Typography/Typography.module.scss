@@ -1,0 +1,28 @@
+.text {
+  color: var(--text-color);
+}
+
+.heading {
+  font-size: var(--font-size-xl);
+}
+
+.subheading {
+  font-size: var(--font-size-lg);
+}
+
+.body {
+  font-size: var(--font-size-md);
+}
+
+.caption {
+  font-size: var(--font-size-sm);
+}
+
+// colors
+.primary {
+  color: var(--primary-color);
+}
+
+.error {
+  color: var(--error-color);
+}

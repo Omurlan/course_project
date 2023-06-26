@@ -1,8 +1,19 @@
-import { type FC, useState } from 'react'
+import { type FC, useEffect, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { SidebarContext } from 'app/providers/SidebarProvider/lib/SidebarContext'
 
 export const SidebarProvider: FC = ({ children }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
+
+  const isLaptop = useMediaQuery({ query: '(max-width: 860px)' })
+
+  useEffect(() => {
+    if (isLaptop) {
+      setOpen(false)
+    } else {
+      setOpen(true)
+    }
+  }, [isLaptop])
 
   const toggleState = (): void => {
     setOpen(!open)

@@ -19,13 +19,13 @@ body {
   padding-left: var(--sidebar-width);
 }
 
+.page-wrapper {
+  flex-grow: 1;
+  padding: var(--spacing-lg);
+}
+
 @media screen and (max-width: 860px) {
   .content-page {
     padding-left: 0;
   }
-}
-
-.page-wrapper {
-  flex-grow: 1;
-  padding: var(--spacing-lg);
 }

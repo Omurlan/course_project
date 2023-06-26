@@ -1,11 +1,8 @@
-import React, { type ChangeEvent, type ChangeEventHandler, memo, useCallback } from 'react'
+import React, { type ChangeEvent, memo, useState } from 'react'
 import styles from './LoginForm.module.scss'
-import cn from 'classnames'
-import Modal from 'react-modal'
 import Button from 'shared/ui/Button/Button'
 import Input from 'shared/ui/Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginActions } from '../../model/slice/loginSlice'
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 
@@ -13,30 +10,36 @@ interface LoginFormProps {
 
 }
 
+interface Form {
+  password: string
+  username: string
+}
+
 export const LoginForm: React.FC<LoginFormProps> = memo(() => {
+  const [form, setForm] = useState<Form>({
+    password: '',
+    username: ''
+  })
+
+  const { isLoading } = useSelector(getLoginState)
+
   const dispatch = useDispatch()
 
-  const { password, username } = useSelector(getLoginState)
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
-  const onChangeUsername = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(loginActions.setUsername(e.target.value))
-  }, [])
-
-  const onChangePassword = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(loginActions.setPassword(e.target.value))
-  }, [])
-
-  const onLoginClick = () => {
+  const onLoginClick = (): void => {
     //  @ts-expect-error error
-    dispatch(loginByUsername({ username, password }))
+    dispatch(loginByUsername({ username: form.username, password: form.password }))
   }
 
   return (
     <div className={styles.loginForm}>
-      <Input value={username} onChange={onChangeUsername} placeholder="Логин" />
-      <Input value={password} onChange={onChangePassword} placeholder="Пароль" />
+      <Input name="username" value={form.username} onChange={handleChange} placeholder="Логин" />
+      <Input name="password" value={form.password} onChange={handleChange} placeholder="Пароль" />
 
-      <Button onClick={onLoginClick}>Войти</Button>
+      <Button disabled={isLoading} onClick={onLoginClick}>Войти</Button>
     </div>
   )
 })
