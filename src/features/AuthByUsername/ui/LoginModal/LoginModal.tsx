@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styles from './LoginModal.module.scss'
 import cn from 'classnames'
 import Modal from 'react-modal'
-import LoginForm from '../LoginForm/LoginForm'
+import { LoginFormAsync } from 'features/AuthByUsername/ui/LoginForm/LoginForm.async'
 
 interface LoginModalProps {
   isOpen: boolean
@@ -16,7 +16,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
         overlayClassName={styles.overlay}
         isOpen={isOpen}
         onRequestClose={onClose}>
-      <LoginForm />
+      <Suspense fallback="">
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   )
 }

@@ -1,7 +1,6 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Navbar.module.scss'
 import cn from 'classnames'
-import AppLink from 'shared/ui/Link/AppLink'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useSidebar } from 'app/providers/SidebarProvider'
 import Button from 'shared/ui/Button/Button'

@@ -27,6 +27,7 @@ module.exports = {
         code: 140
       }
     ],
+    '@typescript-eslint/promise-function-async': [1],
     'react/jsx-indent': [2, 2],
     'react/react-in-jsx-scope': [0],
     '@typescript-eslint/strict-boolean-expressions': [0],
