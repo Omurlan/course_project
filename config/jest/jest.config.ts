@@ -42,8 +42,8 @@ export default {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-        '<rootDir>config/jest/mock.ts',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+        '<rootDir>config/jest/mocks/image.ts',
+    '\\.svg': path.resolve(__dirname, 'mocks', 'jestEmptyComponent.tsx')
   }
 
   // Indicates whether the coverage information should be collected while executing the test

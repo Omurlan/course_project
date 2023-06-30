@@ -36,9 +36,9 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <div className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
 
-      <Button size="small" onClick={handleAuth}>{
-          authData ? 'Выйти' : 'Войти'
-      }</Button>
+      <Button size="small" onClick={handleAuth}>
+        {authData ? 'Выйти' : 'Войти'}
+      </Button>
 
       {!authData && (
       <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} />

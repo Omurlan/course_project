@@ -26,4 +26,4 @@ const loginSlice = createSlice({
   }
 })
 
-export const { reducer: loginReducer } = loginSlice
+export const { reducer: loginReducer, actions: loginActions } = loginSlice

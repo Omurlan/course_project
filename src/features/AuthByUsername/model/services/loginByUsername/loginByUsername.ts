@@ -9,12 +9,9 @@ interface LoginByUsernameProps {
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
   'login/loginByUsername',
-  async ({ password, username }, thunkAPI) => {
+  async (authData, thunkAPI) => {
     try {
-      const response = await axios.post('/api/login', {
-        password,
-        username
-      })
+      const response = await axios.post('/api/login', authData)
 
       if (!response.data) {
         throw new Error()
@@ -24,9 +21,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
 
       return response.data
     } catch (e) {
-      console.log(e)
-
-      thunkAPI.rejectWithValue('error')
+      return thunkAPI.rejectWithValue('Error here')
     }
   }
 )

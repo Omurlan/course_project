@@ -2,10 +2,10 @@ import React, { type ChangeEvent, memo, useState } from 'react'
 import styles from './LoginForm.module.scss'
 import Button from 'shared/ui/Button/Button'
 import Input from 'shared/ui/Input/Input'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
-import { getLoginLoading } from '../../model/selectors/getLoginLoading'
-import { getLoginError } from '../../model/selectors/getLoginError'
+import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading'
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { loginReducer } from '../../model/slice/loginSlice'
 import { AsyncReducer, type ReducerList } from 'shared/lib/components/AsyncReducer/AsyncReducer'
 
@@ -23,6 +23,8 @@ const asyncReducers: ReducerList = {
 }
 
 export const LoginForm: React.FC<LoginFormProps> = memo(() => {
+  const dispatch = useDispatch()
+
   const [form, setForm] = useState<Form>({
     password: '',
     username: ''

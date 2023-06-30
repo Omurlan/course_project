@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module'
   },
   root: true,
-  ignorePatterns: ['json-server/*.js'],
+  ignorePatterns: ['json-server/*.js', '__mocks__'],
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint'],
   rules: {
