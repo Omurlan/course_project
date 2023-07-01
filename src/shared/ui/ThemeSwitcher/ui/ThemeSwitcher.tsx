@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './ThemeSwitcher.module.scss'
 import cn from 'classnames'
 import { useTheme } from 'app/providers/ThemeProvider'
@@ -8,7 +8,7 @@ interface ThemeSwitcherProps {
   className?: string
 }
 
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
+export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -20,6 +20,4 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
       <BsMoon className={cn(styles.icon, styles.moon)} />
     </div>
   )
-}
-
-export default ThemeSwitcher
+})

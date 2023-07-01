@@ -1,10 +1,9 @@
 import { configureStore, type ReducersMapObject } from '@reduxjs/toolkit'
 import { type StateSchema } from './StateSchema'
 import { userReducer } from 'entities/User'
-import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
 
-export function createReduxStore (initialState?: StateSchema): ToolkitStore<StateSchema> {
+export function createReduxStore (initialState?: StateSchema) {
   const rootReducer: ReducersMapObject<StateSchema> = {
     user: userReducer
   }
@@ -21,6 +20,7 @@ export function createReduxStore (initialState?: StateSchema): ToolkitStore<Stat
   // @ts-expect-error test
   store.reducerManager = reducerManager
 
-  // @ts-expect-error test
   return store
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

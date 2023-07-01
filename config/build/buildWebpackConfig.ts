@@ -19,6 +19,7 @@ export function buildWebpackConfig (
     module: {
       rules: buildLoaders(options)
     },
+    optimization: options.isDev ? { splitChunks: { chunks: 'all' } } : undefined,
     resolve: buildResolvers(options.paths),
     plugins: buildPlugins(options),
     devServer: options.isDev ? buildDevServer(options) : undefined,

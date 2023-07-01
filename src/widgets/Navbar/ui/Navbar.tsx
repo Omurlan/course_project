@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import styles from './Navbar.module.scss'
 import cn from 'classnames'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useSidebar } from 'app/providers/SidebarProvider'
-import Button from 'shared/ui/Button/Button'
+import { Button } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
@@ -12,7 +12,7 @@ interface NavbarProps {
   className?: string
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ className }) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { toggleState } = useSidebar()
   const dispatch = useDispatch()
 
@@ -45,4 +45,4 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
       )}
     </div>
   )
-}
+})

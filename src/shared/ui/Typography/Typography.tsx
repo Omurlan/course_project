@@ -1,4 +1,4 @@
-import React, { type ComponentProps } from 'react'
+import React, { type ComponentProps, memo } from 'react'
 import styles from './Typography.module.scss'
 import cn from 'classnames'
 
@@ -14,13 +14,13 @@ const variants: Record<Variants, Tags> = {
 
 type Colors = 'error' | 'default' | 'primary'
 
-interface TypographyProps<T extends Tags> {
+interface TypographyProps extends ComponentProps<'p'> {
   variant: Variants
   color?: Colors
 }
 
 export const Typography =
-    <T extends Tags>({ variant, className, children, color = 'default', ...props }: TypographyProps<T> & ComponentProps<T>) => {
+    memo(({ variant, className, children, color = 'default', ...props }: TypographyProps) => {
       const Component = variants[variant]
 
       return (
@@ -35,6 +35,4 @@ export const Typography =
           {children}
         </Component>
       )
-    }
-
-export default Typography
+    })

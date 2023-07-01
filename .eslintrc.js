@@ -30,6 +30,13 @@ module.exports = {
     '@typescript-eslint/promise-function-async': [1],
     'react/jsx-indent': [2, 2],
     'react/react-in-jsx-scope': [0],
+
+    '@typescript-eslint/no-misused-promises': [
+      2,
+      {
+        checksVoidReturn: false
+      }
+    ],
     '@typescript-eslint/strict-boolean-expressions': [0],
     '@typescript-eslint/no-empty-interface': [1],
     '@typescript-eslint/explicit-function-return-type': [1],

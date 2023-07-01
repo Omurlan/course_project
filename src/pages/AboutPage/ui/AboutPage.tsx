@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from 'shared/ui/Button/Button'
-import Typography from 'shared/ui/Typography/Typography'
+import { Button } from 'shared/ui/Button/Button'
+import { Typography } from 'shared/ui/Typography/Typography'
 
 const AboutPage = () => {
   return <div style={{ display: 'flex', gap: 15, flexWrap: 'wrap' }}>

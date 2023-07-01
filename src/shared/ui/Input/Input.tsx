@@ -1,4 +1,4 @@
-import React, { type ComponentProps } from 'react'
+import React, { type ComponentProps, memo } from 'react'
 import styles from './Input.module.scss'
 import cn from 'classnames'
 
@@ -8,7 +8,7 @@ interface InputProps extends ComponentProps<'input'> {
   helperText?: string
 }
 
-export const Input: React.FC<InputProps> = ({ className, helperText = '', label = '', error = false, ...rest }) => {
+export const Input = memo(({ className, helperText = '', label = '', error = false, ...rest }: InputProps) => {
   return (
     <span className={styles.inputWrapper}>
       {label && (
@@ -25,6 +25,4 @@ export const Input: React.FC<InputProps> = ({ className, helperText = '', label 
       )}
     </span>
   )
-}
-
-export default Input
+})

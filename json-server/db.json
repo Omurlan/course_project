@@ -12,5 +12,14 @@
       "username": "omurlan"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Омурлан",
+    "lastname": "Абдрашев",
+    "age": 21,
+    "currency": "USD",
+    "country": "Kyrgyzstan",
+    "city": "Bishkek",
+    "username": "Omurlan",
+    "avatar": "https://i1.sndcdn.com/artworks-qrvyFMVl46E19sDQ-yxZEBQ-t500x500.jpg"
+  }
 }
