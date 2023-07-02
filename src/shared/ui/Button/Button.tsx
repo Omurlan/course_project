@@ -1,4 +1,4 @@
-import React, { type ComponentProps, memo } from 'react'
+import React, { type ComponentProps } from 'react'
 import styles from './Button.module.scss'
 import cn from 'classnames'
 
@@ -10,7 +10,7 @@ interface ButtonProps extends ComponentProps<'button'> {
   size?: 'small' | 'default'
 }
 
-export const Button = memo(({
+export const Button = ({
   className,
   theme,
   size = 'default',
@@ -32,4 +32,4 @@ export const Button = memo(({
       {children}
     </button>
   )
-})
+}

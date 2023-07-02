@@ -8,8 +8,8 @@ import { SidebarProvider } from 'app/providers/SidebarProvider'
 import { StoreProvider } from 'app/providers/StoreProvider'
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
           <SidebarProvider>
@@ -17,7 +17,7 @@ render(
           </SidebarProvider>
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 )

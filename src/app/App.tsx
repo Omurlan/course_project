@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useLayoutEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import './styles/index.scss'
 import Router from 'app/router/ui/Router'
 import { Navbar } from 'widgets/Navbar'

@@ -2,7 +2,7 @@ import React from 'react'
 import { Input } from 'shared/ui/Input/Input'
 
 const MainPage = () => {
-  return <div>About Page
+  return <div>Main page
     <Input placeholder="Placeholder" />
   </div>
 }

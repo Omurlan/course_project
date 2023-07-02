@@ -32,6 +32,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }
   }
 
+  console.log(authData)
+
   return (
     <div className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
@@ -40,9 +42,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {authData ? 'Выйти' : 'Войти'}
       </Button>
 
-      {!authData && (
       <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} />
-      )}
     </div>
   )
 })

@@ -1,6 +1,7 @@
 .button {
   height: 32px;
   padding: 0 var(--spacing-sm);
+  width: fit-content;
   font-size: var(--font-size-md);
   cursor: pointer;
   border: none;

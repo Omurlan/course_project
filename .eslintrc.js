@@ -37,6 +37,7 @@ module.exports = {
         checksVoidReturn: false
       }
     ],
+    '@typescript-eslint/no-invalid-void-type': [1],
     '@typescript-eslint/strict-boolean-expressions': [0],
     '@typescript-eslint/no-empty-interface': [1],
     '@typescript-eslint/explicit-function-return-type': [1],

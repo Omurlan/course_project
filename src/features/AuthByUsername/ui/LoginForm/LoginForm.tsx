@@ -47,7 +47,7 @@ export const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
   }
 
   return (
-    <AsyncReducer reducers={asyncReducers}>
+    <AsyncReducer reducers={asyncReducers} destroyOnUnmount>
       <div className={styles.loginForm}>
         <Input name="username" value={form.username} onChange={handleChange} placeholder="Логин" />
         <Input name="password" value={form.password} onChange={handleChange} placeholder="Пароль" />
