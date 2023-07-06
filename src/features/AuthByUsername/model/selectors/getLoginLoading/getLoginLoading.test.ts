@@ -2,7 +2,7 @@ import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { getLoginLoading } from 'features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading'
 
-describe('getLoginLoading.test', () => {
+describe('getUserInitiated.test', () => {
   test('loading false', () => {
     const state: DeepPartial<StateSchema> = {
       login: {
