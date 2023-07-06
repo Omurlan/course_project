@@ -32,8 +32,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }
   }
 
-  console.log(authData)
-
   return (
     <div className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />

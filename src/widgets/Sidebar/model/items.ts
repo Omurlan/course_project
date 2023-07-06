@@ -1,5 +1,5 @@
 import { type IconType } from 'react-icons'
-import { BiHomeAlt2 as HomeIcon } from 'react-icons/bi'
+import { BiHomeAlt2 as HomeIcon, BiNews as NewsIcon } from 'react-icons/bi'
 import { AiOutlineInfoCircle as AboutIcon } from 'react-icons/ai'
 import { CgProfile as ProfileIcon } from 'react-icons/cg'
 
@@ -9,6 +9,7 @@ export interface SidebarItemType {
   title: string
   path: string
   Icon: IconType
+  authOnly?: boolean
 }
 
 export const sidebarItemsList: SidebarItemType[] = [
@@ -23,8 +24,15 @@ export const sidebarItemsList: SidebarItemType[] = [
     Icon: AboutIcon
   },
   {
+    title: 'Статьи',
+    path: RoutePath.articles,
+    Icon: NewsIcon,
+    authOnly: true
+  },
+  {
     title: 'Профиль',
     path: RoutePath.profile,
-    Icon: ProfileIcon
+    Icon: ProfileIcon,
+    authOnly: true
   }
 ]

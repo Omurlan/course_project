@@ -4,16 +4,20 @@ import { type AppRouteProps, routeConfig } from 'shared/config/routeConfig/route
 import { RequireAuth } from 'app/router/ui/RequireAuth'
 
 const Router = () => {
-  const renderWithWrapper = useCallback(({ path, element, authOnly }: AppRouteProps) => {
+  const renderWithWrapper = useCallback((route: AppRouteProps) => {
+    const element = (
+      <Suspense fallback="Page loading">
+        {route.element}
+      </Suspense>
+    )
+
     return (
       <Route
-        key={path}
-        path={path}
-        element={authOnly
-          ? <RequireAuth>{element}</RequireAuth>
-          : element
-        }
-        />
+        key={route.path}
+        path={route.path}
+        element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+      />
+
     )
   }, [])
 

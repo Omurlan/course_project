@@ -4,6 +4,8 @@ import cn from 'classnames'
 import { AppLink } from 'shared/ui/Link/AppLink'
 import { type SidebarItemType } from '../../model/items'
 import { useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 
 interface SidebarItemProps {
   item: SidebarItemType
@@ -12,6 +14,11 @@ interface SidebarItemProps {
 export const SidebarItem = memo(({ item }: SidebarItemProps) => {
   const { path, title, Icon } = item
   const { pathname } = useLocation()
+  const isAuth = useSelector(getUserAuthData)
+
+  if (item.authOnly && !isAuth) {
+    return null
+  }
 
   return (
     <li className={styles.item}>

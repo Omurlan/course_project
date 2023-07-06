@@ -22,6 +22,7 @@ const counterSlice = createSlice({
       if (user) {
         state.authData = JSON.parse(user)
       }
+
       state.initiated = true
     },
     logout: (state) => {

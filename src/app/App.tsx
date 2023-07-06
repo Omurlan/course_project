@@ -22,7 +22,7 @@ const App = () => {
           <Sidebar />
 
           <div className="page-wrapper">
-            {initiated && <Router />}
+            {initiated && <Router/>}
           </div>
         </div>
       </Suspense>
