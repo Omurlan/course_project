@@ -19,9 +19,13 @@ export const Input = memo(({ className, helperText = '', label = '', error = fal
         [styles.error]: error
       })} {...rest} />
       {helperText && (
-        <span className={cn(styles.helperText, {
-          [styles.error]: error
-        })}>{helperText}</span>
+        <span
+          className={cn(styles.helperText, {
+            [styles.error]: error
+          })}
+        >
+          {helperText}
+        </span>
       )}
     </span>
   )

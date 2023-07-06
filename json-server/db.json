@@ -1,9 +1,17 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
     {
@@ -13,13 +21,13 @@
     }
   ],
   "profile": {
-    "first": "Омурлан",
+    "first": "Омуowe",
     "lastname": "Абдрашев",
-    "age": 21,
+    "age": "80",
     "currency": "USD",
     "country": "Kyrgyzstan",
     "city": "Bishkek",
     "username": "Omurlan",
-    "avatar": "https://i1.sndcdn.com/artworks-qrvyFMVl46E19sDQ-yxZEBQ-t500x500.jpg"
+    "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
   }
 }

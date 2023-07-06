@@ -1,0 +1,9 @@
+.profilePageHeader {
+  display: flex;
+  justify-content: space-between;
+
+  .actions {
+    display: flex;
+    gap: var(--spacing-xs);
+  }
+}

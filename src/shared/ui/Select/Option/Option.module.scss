@@ -1,0 +1,15 @@
+.option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 32px;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  background-color: var(--bg-color-input);
+  color: var(--text-color);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--bg-color);
+  }
+}

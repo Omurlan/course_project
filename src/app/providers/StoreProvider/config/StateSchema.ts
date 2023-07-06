@@ -40,5 +40,6 @@ export interface ThunkExtraArg {
 
 export interface ThunkConfig<ErrorType> {
   extra: ThunkExtraArg
+  state: StateSchema
   rejectValue: ErrorType
 }
