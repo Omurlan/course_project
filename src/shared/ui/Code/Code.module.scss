@@ -1,0 +1,11 @@
+.code {
+  position: relative;
+  border: 1px solid var(--gray);
+  padding: var(--spacing-md);
+  overflow-x: scroll;
+}
+
+.copyButton {
+  position: absolute;
+  right: var(--spacing-md);
+}

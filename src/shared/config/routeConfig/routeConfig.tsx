@@ -48,7 +48,7 @@ export const routeConfig: AppRouteProps[] = [
     authOnly: true
   },
   {
-    path: `${RoutePath.articles}:id}`,
+    path: `${RoutePath.article}:id`,
     element: <ArticlePage />,
     authOnly: true
   },

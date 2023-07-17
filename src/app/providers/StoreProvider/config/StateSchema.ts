@@ -11,12 +11,14 @@ import { type ProfileSchema } from 'entities/Profile'
 import { type AxiosInstance } from 'axios'
 import { type To } from 'history'
 import { type NavigateOptions } from 'react-router'
+import { type ArticleSchema } from 'entities/Article'
 
 export interface StateSchema {
   user: UserSchema
 
   // асинхронные редюсеры
   login?: LoginSchema
+  article?: ArticleSchema
   profile?: ProfileSchema
 }
 

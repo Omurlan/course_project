@@ -37,6 +37,8 @@ server.post("/api/login", (req, res) => {
     }
 })
 
+
+
 server.use((req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(403).json({ message: "AUTH_ERROR" })
@@ -45,6 +47,7 @@ server.use((req, res, next) => {
 })
 
 server.use("/api", router);
+
 server.listen(8000, () => {
     console.log("server is running on port 8000")
 })

@@ -29,7 +29,6 @@ export const validateForm = <Fields extends string = string>(form: ValidationSch
     }
 
     if (elem.pattern && !elem.pattern.test(String(elem.value) ?? '')) {
-      console.log(elem.field)
       errors[elem.field as Fields] = true
     }
   }

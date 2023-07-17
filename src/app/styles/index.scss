@@ -10,7 +10,7 @@ body {
 
 .app {
   background: var(--bg-color);
-  color: var(--primary-color);
+  color: var(--text-color);
   min-height: 100vh;
 }
 
@@ -21,7 +21,10 @@ body {
 
 .page-wrapper {
   flex-grow: 1;
+  height: calc(100vh - var(--navbar-height));
   padding: var(--spacing-lg);
+  width: 100%;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 860px) {
