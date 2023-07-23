@@ -12,6 +12,7 @@ import { type AxiosInstance } from 'axios'
 import { type To } from 'history'
 import { type NavigateOptions } from 'react-router'
 import { type ArticleSchema } from 'entities/Article'
+import { type ArticleCommentsSchema } from 'pages/ArticlePage/model/types/articleCommentsSchema'
 
 export interface StateSchema {
   user: UserSchema
@@ -19,6 +20,7 @@ export interface StateSchema {
   // асинхронные редюсеры
   login?: LoginSchema
   article?: ArticleSchema
+  articleComments?: ArticleCommentsSchema
   profile?: ProfileSchema
 }
 

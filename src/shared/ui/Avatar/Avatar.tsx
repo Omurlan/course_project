@@ -1,12 +1,18 @@
-import React, { type ComponentProps, memo } from 'react'
+import React, { type ComponentProps, memo, useMemo } from 'react'
 import styles from './Avatar.module.scss'
 import cn from 'classnames'
 
 interface AvatarProps extends ComponentProps<'img'> {
+
 }
 
-export const Avatar = memo(({ className, ...rest }: AvatarProps) => {
+export const Avatar = memo(({ className, width, height, style, ...rest }: AvatarProps) => {
+  const size = useMemo(() => ({
+    width,
+    height
+  }), [width, height])
+
   return (
-    <img className={cn(styles.avatar, className)} {...rest} />
+    <img style={{ ...size, ...style }} className={cn(styles.avatar, className)} {...rest} />
   )
 })

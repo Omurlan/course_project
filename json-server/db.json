@@ -104,19 +104,22 @@
       "id": 1,
       "password": "omurlan2002",
       "username": "omurlan",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
     },
     {
       "id": "2",
       "username": "admin",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
     },
     {
       "id": "3",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
     }
   ],
   "profile": {
