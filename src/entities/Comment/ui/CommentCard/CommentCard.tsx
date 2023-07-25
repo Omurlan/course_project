@@ -5,6 +5,8 @@ import cn from 'classnames'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Typography } from 'shared/ui/Typography/Typography'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
+import { AppLink } from 'shared/ui/Link/AppLink'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface CommentCardProps {
   className?: string
@@ -28,10 +30,10 @@ export const CommentCard = React.memo(({ comment, isLoading, className }: Commen
 
   return (
     <div className={cn(styles.comment, className)}>
-      <div className={styles.header}>
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
         {comment.user.avatar && <Avatar width={45} height={45} src={comment.user.avatar} />}
         <Typography variant="body">{comment.user.username}</Typography>
-      </div>
+      </AppLink>
       <Typography variant="body">{comment.text}</Typography>
     </div>
   )

@@ -8,6 +8,9 @@ import { type ChangeEventSelect, Select, type SelectOption } from 'shared/ui/Sel
 import { Country, Currency } from 'shared/const/common'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { type ValidationForm } from 'shared/lib/validation/validateForm'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
+import { getProfileData } from 'entities/Profile'
 
 interface ProfileCardProps {
   profile?: Profile
@@ -79,6 +82,14 @@ const fields: Field[] = [
 ]
 
 export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, validationForm, avatar, isLoading, error, isEdit, formChange }) => {
+  const handleChangeInput = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
+    formChange({ [event.target.name]: event.target.value })
+  }, [])
+
+  const handleChangeSelect = useCallback((event: ChangeEventSelect): void => {
+    formChange({ [event.name]: event.value })
+  }, [])
+
   if (isLoading) {
     return (
       <div className={cn(styles.profileCard)}>
@@ -94,14 +105,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, validationFor
       </div>
     )
   }
-
-  const handleChangeInput = useCallback((event: ChangeEvent<HTMLInputElement>): void => {
-    formChange({ [event.target.name]: event.target.value })
-  }, [])
-
-  const handleChangeSelect = useCallback((event: ChangeEventSelect): void => {
-    formChange({ [event.name]: event.value })
-  }, [])
 
   return (
     <div className={cn(styles.profileCard)}>

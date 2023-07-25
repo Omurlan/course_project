@@ -5,6 +5,7 @@ import { Typography } from 'shared/ui/Typography/Typography'
 import { Button } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import {
+  getProfileData,
   getProfileForm,
   getProfileIsEdit,
   profileActions,
@@ -12,6 +13,7 @@ import {
   validateProfileData
 } from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { getUserAuthData } from 'entities/User'
 
 interface ProfilePageHeaderProps {
 
@@ -22,6 +24,11 @@ export const ProfilePageHeader = memo(() => {
   const profileForm = useSelector(getProfileForm)
 
   const dispatch = useAppDispatch()
+
+  const authData = useSelector(getUserAuthData)
+  const profileData = useSelector(getProfileData)
+
+  const canEdit = authData?.id === profileData?.id
 
   const handleEdit = () => {
     if (isEdit) dispatch(profileActions.cancelEdit())
@@ -42,20 +49,25 @@ export const ProfilePageHeader = memo(() => {
     <div className={styles.profilePageHeader}>
       <Typography variant="heading">Профиль</Typography>
 
-      <div className={styles.actions}>
-        {isEdit && (
+      {canEdit && (
+      <>
+        <div className={styles.actions}>
+          {isEdit && (
           <Button onClick={submitEdit}>
             Сохранить
           </Button>
-        )}
+          )}
 
-        <Button
+          <Button
             variant={isEdit ? 'neutral' : 'default'}
             onClick={handleEdit}
-        >
-          {isEdit ? 'Отмена' : 'Редактировать'}
-        </Button>
-      </div>
+          >
+            {isEdit ? 'Отмена' : 'Редактировать'}
+          </Button>
+        </div>
+      </>
+      )}
+
     </div>
   )
 })

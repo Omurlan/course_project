@@ -22,7 +22,7 @@ export enum Routes {
 export const RoutePath: Record<Routes, string> = {
   [Routes.MAIN]: '/',
   [Routes.ABOUT]: '/about',
-  [Routes.PROFILE]: '/profile',
+  [Routes.PROFILE]: '/profile/', // + :id
   [Routes.ARTICLE]: '/articles/', // + :id
   [Routes.ARTICLES]: '/articles',
   [Routes.NOT_FOUND]: '*'
@@ -38,7 +38,7 @@ export const routeConfig: AppRouteProps[] = [
     element: <AboutPage />
   },
   {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true
   },

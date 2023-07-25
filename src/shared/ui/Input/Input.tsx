@@ -8,9 +8,17 @@ interface InputProps extends ComponentProps<'input'> {
   helperText?: string
 }
 
-export const Input = memo(({ className, helperText = '', label = '', error = false, ...rest }: InputProps) => {
+export const Input = memo((props: InputProps) => {
+  const {
+    className,
+    helperText = '',
+    label = '',
+    error = false,
+    ...rest
+  } = props
+
   return (
-    <span className={styles.inputWrapper}>
+    <div className={cn(styles.inputWrapper, className)}>
       {label && (
         <label className={styles.label}>{label}</label>
       )}
@@ -18,6 +26,7 @@ export const Input = memo(({ className, helperText = '', label = '', error = fal
       <input className={cn(styles.input, className, {
         [styles.error]: error
       })} {...rest} />
+
       {helperText && (
         <span
           className={cn(styles.helperText, {
@@ -27,6 +36,6 @@ export const Input = memo(({ className, helperText = '', label = '', error = fal
           {helperText}
         </span>
       )}
-    </span>
+    </div>
   )
 })

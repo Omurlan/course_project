@@ -2,6 +2,7 @@ import { type Country, type Currency } from 'shared/const/common'
 import { type ValidationForm } from 'shared/lib/validation/validateForm'
 
 export interface Profile {
+  id?: string
   first?: string
   lastname?: string
   age?: number

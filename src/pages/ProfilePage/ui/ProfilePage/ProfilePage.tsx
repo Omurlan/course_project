@@ -12,6 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader'
 import { getProfileValidationForm } from 'entities/Profile'
+import { useParams } from 'react-router-dom'
 
 const reducers: ReducerList = {
   profile: profileReducer
@@ -22,6 +23,7 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: React.FC<ProfilePageProps> = () => {
+  const { id } = useParams<{ id: string }>()
   const dispatch = useAppDispatch()
   const profileForm = useSelector(getProfileForm)
   const profileData = useSelector(getProfileData)
@@ -31,7 +33,9 @@ const ProfilePage: React.FC<ProfilePageProps> = () => {
   const validationForm = useSelector(getProfileValidationForm)
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    if (id) {
+      dispatch(fetchProfileData(id))
+    }
   }, [])
 
   const handleFormChange = useCallback((profile: Partial<Profile>): void => {

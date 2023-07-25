@@ -5,13 +5,17 @@ import { getProfileForm } from 'entities/Profile'
 
 export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
   'profile/updateProfileData',
-  async (_, thunkAPI) => {
+  async (profileId, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI
 
     const formData = getProfileForm(getState())
 
+    if (!formData?.id) {
+      return rejectWithValue('No profile id')
+    }
+
     try {
-      const response = await extra.api.put<Profile>('/profile', formData)
+      const response = await extra.api.put<Profile>(`/profiles/${formData?.id}`, formData)
 
       if (!response.data) {
         throw new Error()

@@ -9,7 +9,8 @@ const profileData = {
   city: 'Moscow',
   age: 23,
   country: Country.USA,
-  username: 'Omurlan'
+  username: 'Omurlan',
+  id: '1'
 }
 
 describe('updateProfileData.test', () => {
@@ -30,7 +31,7 @@ describe('updateProfileData.test', () => {
   test('error update profile data', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
-        data: profileData
+        form: profileData
       }
     })
     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }))

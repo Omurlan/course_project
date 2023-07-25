@@ -101,7 +101,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "password": "omurlan2002",
       "username": "omurlan",
       "role": "ADMIN",
@@ -113,23 +113,30 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
-    },
-    {
-      "id": "3",
-      "username": "user",
-      "password": "123",
-      "role": "USER",
-      "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
     }
   ],
-  "profile": {
-    "first": "Омурлан",
-    "lastname": "Абдрашев",
-    "age": "80",
-    "currency": "USD",
-    "country": "Kyrgyzstan",
-    "city": "Bishkek",
-    "username": "Omurlan",
-    "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
-  }
+  "profiles": [
+    {
+      "id": "1",
+      "first": "Омурлан",
+      "lastname": "Абдрашев",
+      "age": "80",
+      "currency": "USD",
+      "country": "Kyrgyzstan",
+      "city": "Bishkek",
+      "username": "Omurlan",
+      "avatar": "https://www.soscanhelp.com/hs-fs/hubfs/Dark%20Web%20Hacker%20Blue%20Glow.jpeg?width=3008&name=Dark%20Web%20Hacker%20Blue%20Glow.jpeg"
+    },
+    {
+      "id": "2",
+      "first": "Человек",
+      "lastname": "Паук",
+      "age": "33",
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Bishkek",
+      "username": "Omurlan",
+      "avatar": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/428e2842-4157-45e8-a9af-1e5245e52c37/600x900"
+    }
+  ]
 }
