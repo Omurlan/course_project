@@ -7,7 +7,7 @@ import {
   getAddCommentFormError,
   getAddCommentFormText
 } from '../model/selectors/addCommentFormSelectors'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice'
 import { AsyncReducer, type ReducerList } from 'shared/lib/components/AsyncReducer/AsyncReducer'
 import { TextArea } from 'shared/ui/TextArea/TextArea'

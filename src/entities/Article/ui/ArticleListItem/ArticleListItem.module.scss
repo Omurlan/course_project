@@ -1,0 +1,87 @@
+.default .card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  .views {
+    margin-left: auto;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    margin-right: var(--spacing-xs);
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .textBlock {
+    max-height: 210px;
+    overflow-y: hidden;
+  }
+}
+
+.plate .card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 230px;
+
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  .img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .date {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-xs);
+  }
+
+  .types {
+    width: 115px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .views {
+    margin-left: auto;
+    margin-right: var(--spacing-xs);
+  }
+
+  .title {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

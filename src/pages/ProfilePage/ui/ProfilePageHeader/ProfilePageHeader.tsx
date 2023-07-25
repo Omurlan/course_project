@@ -12,7 +12,7 @@ import {
   updateProfileData,
   validateProfileData
 } from 'entities/Profile'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from 'entities/User'
 
 interface ProfilePageHeaderProps {

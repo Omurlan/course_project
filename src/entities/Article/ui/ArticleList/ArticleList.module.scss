@@ -1,0 +1,17 @@
+.articleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.default {
+  .articleItem {
+    width: 100%;
+  }
+}
+
+.plate {
+  .articleItem {
+    width: auto;
+  }
+}
