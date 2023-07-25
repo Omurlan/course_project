@@ -3,20 +3,23 @@ import styles from './Sidebar.module.scss'
 import cn from 'classnames'
 import { useSidebar } from 'app/providers/SidebarProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
-import { sidebarItemsList } from '../../model/items'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 
 interface SidebarProps {}
 
 export const Sidebar = memo(() => {
   const { open, toggleState } = useSidebar()
 
+  const sidebarItemList = useSelector(getSidebarItems)
+
   const sidebarList = useMemo(() => (
-    sidebarItemsList.map((route) => (
+    sidebarItemList.map((route) => (
       <SidebarItem key={route.path} item={route} />
     ))
   )
-  , [])
+  , [sidebarItemList])
 
   return (
     <div
