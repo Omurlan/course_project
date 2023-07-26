@@ -14,6 +14,7 @@ import { type NavigateOptions } from 'react-router'
 import { type ArticleSchema } from 'entities/Article'
 import { type ArticleCommentsSchema } from 'pages/ArticlePage/model/types/articleCommentsSchema'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
+import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
   user: UserSchema
@@ -24,6 +25,7 @@ export interface StateSchema {
   articleComments?: ArticleCommentsSchema
   profile?: ProfileSchema
   addCommentForm?: AddCommentFormSchema
+  articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
