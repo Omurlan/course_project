@@ -31,16 +31,16 @@ export const ArticleDetails = React.memo(({ id }: ArticleProps) => {
   const isLoading = useSelector(getArticleIsLoading)
   const error = useSelector(getArticleError)
 
-  const renderBlock = useCallback((block: ArticleBlock) => {
+  const renderBlock = useCallback((block: ArticleBlock, index) => {
     switch (block.type) {
       case 'CODE':
-        return <ArticleCodeBlock className={styles.block} block={block} />
+        return <ArticleCodeBlock key={index} className={styles.block} block={block} />
 
       case 'TEXT':
-        return <ArticleTextBlock className={styles.block} block={block} />
+        return <ArticleTextBlock key={index} className={styles.block} block={block} />
 
       case 'IMAGE':
-        return <ArticleImageBlock className={styles.block} block={block} />
+        return <ArticleImageBlock key={index} className={styles.block} block={block} />
       default:
         return null
     }

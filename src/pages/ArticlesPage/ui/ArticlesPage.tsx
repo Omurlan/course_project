@@ -4,16 +4,13 @@ import ArticleList from 'entities/Article/ui/ArticleList/ArticleList'
 import { AsyncReducer, type ReducerList } from 'shared/lib/components/AsyncReducer/AsyncReducer'
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/articlesPageSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList'
 import { useSelector } from 'react-redux'
-import {
-  getArticlesPageIsLoading, getArticlesPageTotalCount,
-  getArticlesPageView
-} from '../model/selectors/articlesPageSelectors'
+import { getArticlesPageIsLoading, getArticlesPageView } from '../model/selectors/articlesPageSelectors'
 import { ArticleViewSelector } from 'features/ArticleViewSelector'
 import { type ArticleView } from 'entities/Article'
 import { Page } from 'shared/ui/Page/Page'
 import { fetchNextArticles } from 'pages/ArticlesPage/model/services/fetchNextArticles/fetchNextArticles'
+import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlesPageProps {
 
@@ -35,10 +32,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = () => {
   }, [])
 
   useEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(fetchArticlesList({
-      page: 1
-    }))
+    dispatch(initArticlesPage())
   }, [])
 
   const onChangeView = useCallback((view: ArticleView) => {

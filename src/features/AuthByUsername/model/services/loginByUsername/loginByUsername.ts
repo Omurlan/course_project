@@ -10,7 +10,7 @@ interface LoginByUsernameProps {
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
-    const { extra: { api, navigate }, dispatch, rejectWithValue } = thunkAPI
+    const { extra: { api }, dispatch, rejectWithValue } = thunkAPI
 
     try {
       const response = await api.post('/login', authData)
@@ -20,10 +20,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
       }
 
       dispatch(userActions.setAuthData(response.data))
-
-      if (navigate) {
-        navigate('/about')
-      }
 
       return response.data
     } catch (e) {
