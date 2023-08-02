@@ -16,6 +16,7 @@ import { AddCommentForm } from 'features/AddCommentForm'
 import { addCommentToArticle } from 'pages/ArticlePage/model/services/addCommentToArticle/addCommentToArticle'
 import { Button } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Page } from 'shared/ui/Page/Page'
 
 interface ArticlePageProps {
 
@@ -52,11 +53,13 @@ const ArticlePage = memo(() => {
 
   return (
     <AsyncReducer reducers={reducers} destroyOnUnmount>
-      <Button onClick={onBackToList} variant="outline">Назад к списку</Button>
-      <ArticleDetails id={id} />
-      <Typography variant="subheading">Комментарии</Typography>
-      <AddCommentForm onSendComment={onSendComment} />
-      <CommentList isLoading={commentsIsLoading} comments={comments} />
+      <Page>
+        <Button onClick={onBackToList} variant="outline">Назад к списку</Button>
+        <ArticleDetails id={id} />
+        <Typography variant="subheading">Комментарии</Typography>
+        <AddCommentForm onSendComment={onSendComment} />
+        <CommentList isLoading={commentsIsLoading} comments={comments} />
+      </Page>
     </AsyncReducer>
   )
 })

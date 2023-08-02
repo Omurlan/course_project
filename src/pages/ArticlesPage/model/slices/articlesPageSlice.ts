@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice, type PayloadAction } from '@reduxjs/t
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { type Article, ArticleView } from 'entities/Article'
 import { type ArticlesPageSchema } from '../types/articlesPageSchema'
-import { fetchArticlesList } from '../services/fetchArticlesList'
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
 import { ARTICLE_VIEW_KEY } from 'shared/const/localstorage'
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -19,15 +19,27 @@ const articlesPageSlice = createSlice({
     error: null,
     view: ArticleView.DEFAULT,
     entities: {},
-    ids: []
+    ids: [],
+    page: 1
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload
       localStorage.setItem(ARTICLE_VIEW_KEY, action.payload)
     },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload
+    },
+    setTotalCount: (state, action: PayloadAction<number>) => {
+      state.totalCount = action.payload
+    },
     initState: (state) => {
-      state.view = localStorage.getItem(ARTICLE_VIEW_KEY) as ArticleView ?? ArticleView.DEFAULT
+      const view = localStorage.getItem(ARTICLE_VIEW_KEY) as ArticleView ?? ArticleView.DEFAULT
+      state.view = view
+
+      const limit = view === ArticleView.DEFAULT ? 4 : 9
+      state.limit = limit
+      state.totalCount = limit
     }
   },
   extraReducers: (builder) => {
@@ -37,7 +49,7 @@ const articlesPageSlice = createSlice({
     })
     builder.addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<Article[]>) => {
       state.isLoading = false
-      articlesAdapter.setAll(state, action.payload)
+      articlesAdapter.addMany(state, action.payload)
     })
     builder.addCase(fetchArticlesList.rejected, (state, action) => {
       state.isLoading = false

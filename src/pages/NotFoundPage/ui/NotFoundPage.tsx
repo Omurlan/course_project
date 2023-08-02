@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './NotFoundPage.module.scss'
 import cn from 'classnames'
+import { Page } from 'shared/ui/Page/Page'
 
 interface NotFoundPageProps {
 
@@ -8,9 +9,9 @@ interface NotFoundPageProps {
 
 export const NotFoundPage: React.FC<NotFoundPageProps> = () => {
   return (
-    <div className={styles.notFound}>
+    <Page className={styles.notFound}>
       <h1>Страница не найдена</h1>
-    </div>
+    </Page>
   )
 }
 

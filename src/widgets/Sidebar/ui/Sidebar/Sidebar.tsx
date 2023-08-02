@@ -22,7 +22,7 @@ export const Sidebar = memo(() => {
   , [sidebarItemList])
 
   return (
-    <div
+    <menu
         data-testid="sidebar"
       className={cn(styles.sidebar, {
         [styles.collapsed]: !open
@@ -37,6 +37,6 @@ export const Sidebar = memo(() => {
       <div className={styles.switchers}>
         <ThemeSwitcher />
       </div>
-    </div>
+    </menu>
   )
 })

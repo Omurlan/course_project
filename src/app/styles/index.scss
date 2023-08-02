@@ -19,14 +19,6 @@ body {
   padding-left: var(--sidebar-width);
 }
 
-.page-wrapper {
-  flex-grow: 1;
-  height: calc(100vh - var(--navbar-height));
-  padding: var(--spacing-lg);
-  width: 100%;
-  overflow-y: auto;
-}
-
 @media screen and (max-width: 860px) {
   .content-page {
     padding-left: 0;

@@ -20,10 +20,7 @@ const App = () => {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-
-          <div className="page-wrapper">
-            {initiated && <Router/>}
-          </div>
+          {initiated && <Router/>}
         </div>
       </Suspense>
     </div>

@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader'
 import { getProfileValidationForm } from 'entities/Profile'
 import { useParams } from 'react-router-dom'
+import { Page } from 'shared/ui/Page/Page'
 
 const reducers: ReducerList = {
   profile: profileReducer
@@ -44,7 +45,7 @@ const ProfilePage: React.FC<ProfilePageProps> = () => {
 
   return (
     <AsyncReducer reducers={reducers}>
-      <div className={styles.profilePage}>
+      <Page className={styles.profilePage}>
         <ProfilePageHeader />
 
         <ProfileCard
@@ -56,7 +57,7 @@ const ProfilePage: React.FC<ProfilePageProps> = () => {
           isLoading={isLoading}
           error={error}
         />
-      </div>
+      </Page>
     </AsyncReducer>
 
   )

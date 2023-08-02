@@ -29,17 +29,6 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
     )
   }, [view])
 
-  if (isLoading) {
-    return (
-      <div className={cn(styles.articleList, className, {
-        [styles.default]: view === ArticleView.DEFAULT,
-        [styles.plate]: view === ArticleView.PLATE
-      })}>
-        {getSkeletons(view)}
-      </div>
-    )
-  }
-
   return (
     <div className={cn(styles.articleList, className, {
       [styles.default]: view === ArticleView.DEFAULT,
@@ -48,6 +37,8 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
       {articles.length > 0
         ? articles.map(renderArticle)
         : null}
+
+      {isLoading && getSkeletons(view)}
     </div>
   )
 }

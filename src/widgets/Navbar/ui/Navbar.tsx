@@ -33,7 +33,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <div className={cn(styles.navbar, className)}>
+    <header className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
 
       <Button size="small" onClick={handleAuth}>
@@ -41,6 +41,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       </Button>
 
       <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} />
-    </div>
+    </header>
   )
 })
