@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader'
 import { getProfileValidationForm } from 'entities/Profile'
 import { useParams } from 'react-router-dom'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 
 const reducers: ReducerList = {
   profile: profileReducer
