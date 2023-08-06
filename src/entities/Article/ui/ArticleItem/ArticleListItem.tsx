@@ -17,7 +17,7 @@ interface ArticleListItemProps {
   view: ArticleView
 }
 
-const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
+export const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
   const { article, view, className } = props
   const navigate = useNavigate()
 
@@ -65,7 +65,7 @@ const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
         {types}
         <img className={styles.img} src={article.img} alt={article.title} />
         {textBlock && (
-        <ArticleTextBlockComponent className={styles.textBlock} block={textBlock} />
+          <ArticleTextBlockComponent className={styles.textBlock} block={textBlock} />
         ) }
         <div className={styles.footer}>
           <Button onClick={onOpenArticle} variant="outline">Читать далее...</Button>
@@ -75,5 +75,3 @@ const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
     </div>
   )
 }
-
-export default ArticleListItem

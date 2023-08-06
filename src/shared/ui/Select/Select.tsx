@@ -1,34 +1,35 @@
-import React, { memo, type MouseEventHandler, useEffect, useRef, useState } from 'react'
+import React, { type MouseEventHandler, useEffect, useRef, useState } from 'react'
 import styles from './Select.module.scss'
 import cn from 'classnames'
 import { SlArrowDown } from 'react-icons/sl'
 import { Option } from './Option/Option'
 
-export interface SelectOption {
-  value: string
+export interface SelectOption<T extends string = string> {
+  value: T
   title: string
 }
 
-export interface ChangeEventSelect {
-  value: string
+export interface ChangeEventSelect<T extends string = string> {
+  value: T
   name: string
 }
 
-interface DropdownProps {
-  selected: string | undefined | number
-  options: SelectOption[]
+interface DropdownProps<T extends string > {
+  className?: string
+  selected: string | null
+  options: Array<SelectOption<T>>
   placeholder?: string
   helperText?: string
   disabled?: boolean
   name?: string
   label?: string
   error?: boolean
-  onChange?: (selected: ChangeEventSelect) => void
+  onChange?: (selected: ChangeEventSelect<T>) => void
   onClose?: () => void
 }
 
-export const Select = memo((props: DropdownProps) => {
-  const { selected, options, placeholder, helperText, disabled, name = '', label, error = false, onChange, onClose } = props
+export const Select = <T extends string>(props: DropdownProps<T>) => {
+  const { selected, options, placeholder, className, helperText, disabled, name = '', label, error = false, onChange, onClose } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -71,7 +72,7 @@ export const Select = memo((props: DropdownProps) => {
 
   const handleOptionClick = (value: string) => {
     setIsOpen(false)
-    onChange?.({ value, name })
+    onChange?.({ value: value as T, name })
   }
 
   const handlePlaceholderClick: MouseEventHandler<HTMLDivElement> = () => {
@@ -79,9 +80,9 @@ export const Select = memo((props: DropdownProps) => {
   }
 
   return (
-    <div className={styles.select}>
+    <div className={cn(styles.select, className)}>
       {label && (
-      <label className={styles.label}>{label}</label>
+        <label className={styles.label}>{label}</label>
       )}
       <div ref={rootRef} className={cn(styles.selectContent, {
         [styles.active]: isOpen
@@ -98,32 +99,32 @@ export const Select = memo((props: DropdownProps) => {
             [styles.empty]: !selected,
             [styles.disabled]: disabled
           })}
-      >
+        >
           {selected ?? placeholder}
         </div>
 
         {isOpen && (
-          <ul className={styles.select}>
+          <ul className={styles.list}>
             {options.map((option) => (
               <Option
-              key={option.value}
-              option={option}
-              onClick={handleOptionClick}
-            />
+                key={option.value}
+                option={option}
+                onClick={handleOptionClick}
+              />
             ))}
           </ul>
         )}
       </div>
 
       {helperText && (
-      <span
-        className={cn(styles.helperText, {
-          [styles.error]: error
-        })}
-      >
-        {helperText}
-      </span>
+        <span
+          className={cn(styles.helperText, {
+            [styles.error]: error
+          })}
+        >
+          {helperText}
+        </span>
       )}
     </div>
   )
-})
+}

@@ -8,9 +8,6 @@ import { type ChangeEventSelect, Select, type SelectOption } from 'shared/ui/Sel
 import { Country, Currency } from 'shared/const/common'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { type ValidationForm } from 'shared/lib/validation/validateForm'
-import { useSelector } from 'react-redux'
-import { getUserAuthData } from 'entities/User'
-import { getProfileData } from 'entities/Profile'
 
 interface ProfileCardProps {
   profile?: Profile
@@ -138,7 +135,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, validationFor
               helperText={validationForm?.[name] ? errorMessage : ''}
               placeholder={placeholder}
               disabled={!isEdit}
-              selected={profile?.[name]}
+              selected={profile?.[name] ? profile[name] as string : null}
               options={options ?? []}
             />
           )

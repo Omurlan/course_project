@@ -14,7 +14,7 @@ describe('initArticlesPage.test', () => {
     }
 
     const thunk = new TestAsyncThunk(initArticlesPage, state)
-    await thunk.callThunk()
+    await thunk.callThunk(undefined)
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
     expect(fetchArticlesList).not.toHaveBeenCalled()
@@ -27,7 +27,7 @@ describe('initArticlesPage.test', () => {
     }
 
     const thunk = new TestAsyncThunk(initArticlesPage, state)
-    await thunk.callThunk()
+    await thunk.callThunk(undefined)
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4)
     expect(fetchArticlesList).toHaveBeenCalled()

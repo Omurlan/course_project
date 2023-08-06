@@ -9,6 +9,8 @@
     border-radius: var(--border-radius);
     background: var(--bg-color-input);
 
+    --icon-width: 18px;
+
     .placeholder {
       position: relative;
       display: flex;
@@ -17,7 +19,8 @@
       align-items: center;
       height: 32px;
       border: 1px solid transparent;
-      padding: 0 var(--spacing-sm);
+      padding-left: var(--spacing-sm);
+      padding-right: calc(var(--spacing-sm) * 2 + var(--icon-width));
       font-size: var(--font-size-md);
       width: 100%;
       cursor: pointer;
@@ -54,6 +57,7 @@
       color: var(--text-color-label);
       right: var(--spacing-sm);
       top: 50%;
+      width: var(--icon-width);
       transform: translateY(-50%);
 
       &.disabled {
@@ -61,7 +65,7 @@
       }
     }
 
-    .select {
+    .list {
       display: block;
       position: absolute;
       top: 33px;

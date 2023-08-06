@@ -1,0 +1,10 @@
+.articleSortSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+
+  .select {
+    min-width: 240px;
+    flex-grow: 1;
+  }
+}

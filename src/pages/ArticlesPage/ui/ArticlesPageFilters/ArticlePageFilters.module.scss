@@ -1,0 +1,13 @@
+.articleFilters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.sortWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: space-between;
+  align-items: flex-end;
+}

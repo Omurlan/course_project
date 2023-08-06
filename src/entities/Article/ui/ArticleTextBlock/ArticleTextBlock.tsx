@@ -13,7 +13,7 @@ export const ArticleTextBlock = React.memo(({ block, className }: ArticleTextBlo
   return (
     <div className={cn(styles.articleTextBlock, className)}>
       {block.title && (
-      <Typography className={styles.title} variant="subheading">{block.title}</Typography>
+        <Typography className={styles.title} variant="subheading">{block.title}</Typography>
       )}
       {block.paragraphs.map((paragraph, index) => (
         <Typography className={styles.paragraph} key={index} variant="body">{paragraph}</Typography>

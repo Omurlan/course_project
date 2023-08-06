@@ -12,10 +12,10 @@ interface LoginModalProps {
 export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   return (
     <Modal
-        className={styles.modal}
-        overlayClassName={styles.overlay}
-        isOpen={isOpen}
-        onRequestClose={onClose}>
+      className={styles.modal}
+      overlayClassName={styles.overlay}
+      isOpen={isOpen}
+      onRequestClose={onClose}>
       <Suspense fallback="">
         <LoginFormAsync onSuccess={onClose} />
       </Suspense>

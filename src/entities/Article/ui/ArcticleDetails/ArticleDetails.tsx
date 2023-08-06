@@ -35,10 +35,8 @@ export const ArticleDetails = React.memo(({ id }: ArticleProps) => {
     switch (block.type) {
       case 'CODE':
         return <ArticleCodeBlock key={index} className={styles.block} block={block} />
-
       case 'TEXT':
         return <ArticleTextBlock key={index} className={styles.block} block={block} />
-
       case 'IMAGE':
         return <ArticleImageBlock key={index} className={styles.block} block={block} />
       default:

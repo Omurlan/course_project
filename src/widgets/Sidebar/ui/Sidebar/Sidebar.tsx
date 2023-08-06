@@ -7,8 +7,6 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 
-interface SidebarProps {}
-
 export const Sidebar = memo(() => {
   const { open, toggleState } = useSidebar()
 
@@ -23,7 +21,7 @@ export const Sidebar = memo(() => {
 
   return (
     <menu
-        data-testid="sidebar"
+      data-testid="sidebar"
       className={cn(styles.sidebar, {
         [styles.collapsed]: !open
       })}

@@ -20,7 +20,7 @@ describe('fetchNextArticles.test', () => {
     await thunk.callThunk()
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4)
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 2 })
+    expect(fetchArticlesList).toHaveBeenCalled()
   })
   test('all data has been received', async () => {
     const state: DeepPartial<StateSchema> = {

@@ -19,7 +19,7 @@ export const fetchNextArticles = createAsyncThunk<void, void, ThunkConfig<string
 
     if (page * limit < totalCount && !isLoading) {
       dispatch(articlesPageActions.setPage(page + 1))
-      dispatch(fetchArticlesList({ page: page + 1 }))
+      dispatch(fetchArticlesList({}))
     }
   }
 )

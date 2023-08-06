@@ -39,10 +39,10 @@ const AddCommentForm: React.FC<AddCommentFormProps> = ({ className, onSendCommen
     <AsyncReducer reducers={reducers} destroyOnUnmount>
       <div className={cn(styles.addCommentForm, className)}>
         <TextArea
-            onChange={onTextChange}
-            placeholder="Введите текст комментария"
-            value={text}
-         />
+          onChange={onTextChange}
+          placeholder="Введите текст комментария"
+          value={text}
+        />
         <Button onClick={onSendHandler} className={styles.submit}>Отправить</Button>
       </div>
     </AsyncReducer>

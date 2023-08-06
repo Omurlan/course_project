@@ -1,9 +1,7 @@
 import React, { useCallback } from 'react'
 import styles from './ArticleList.module.scss'
 import cn from 'classnames'
-import { type Article, ArticleView } from 'entities/Article'
-import ArticleListItem from '../ArticleListItem/ArticleListItem'
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { ArticleListItem, ArticleListItemSkeleton, type Article, ArticleView } from 'entities/Article'
 
 interface ArticleListProps {
   className?: string
@@ -20,7 +18,7 @@ const getSkeletons = (view: ArticleView) => {
     ))
 }
 
-const ArticleList: React.FC<ArticleListProps> = (props) => {
+export const ArticleList: React.FC<ArticleListProps> = (props) => {
   const { isLoading, className, view = ArticleView.DEFAULT, articles } = props
 
   const renderArticle = useCallback((article: Article) => {
@@ -42,5 +40,3 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
     </div>
   )
 }
-
-export default ArticleList

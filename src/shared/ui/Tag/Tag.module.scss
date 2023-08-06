@@ -1,0 +1,17 @@
+.tag {
+  width: fit-content;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bg-color-input);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--primary-color);
+  }
+}
+
+.tag.active {
+  background: var(--primary-color);
+}

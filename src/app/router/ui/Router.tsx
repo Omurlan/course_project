@@ -22,13 +22,11 @@ const Router = () => {
   }, [])
 
   return (
-    <div>
-      <Suspense fallback={<div>Loading</div>}>
-        <Routes>
-          {routeConfig.map(renderWithWrapper)}
-        </Routes>
-      </Suspense>
-    </div>
+    <Suspense fallback={<div>Loading</div>}>
+      <Routes>
+        {routeConfig.map(renderWithWrapper)}
+      </Routes>
+    </Suspense>
   )
 }
 

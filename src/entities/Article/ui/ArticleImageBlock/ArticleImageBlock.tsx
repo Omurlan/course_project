@@ -14,7 +14,7 @@ export const ArticleImageBlock = React.memo(({ className, block }: ArticleImageB
     <div className={cn(styles.articleImageBlock, className)}>
       <img src={block.src} className={styles.image} alt={block.title} />
       {block.title && (
-      <Typography variant="caption">{block.title}{block.title}</Typography>
+        <Typography variant="caption">{block.title}{block.title}</Typography>
       )}
     </div>
   )

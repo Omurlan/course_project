@@ -50,22 +50,22 @@ export const ProfilePageHeader = memo(() => {
       <Typography variant="heading">Профиль</Typography>
 
       {canEdit && (
-      <>
-        <div className={styles.actions}>
-          {isEdit && (
-          <Button onClick={submitEdit}>
-            Сохранить
-          </Button>
-          )}
+        <>
+          <div className={styles.actions}>
+            {isEdit && (
+              <Button onClick={submitEdit}>
+                Сохранить
+              </Button>
+            )}
 
-          <Button
-            variant={isEdit ? 'neutral' : 'default'}
-            onClick={handleEdit}
-          >
-            {isEdit ? 'Отмена' : 'Редактировать'}
-          </Button>
-        </div>
-      </>
+            <Button
+              variant={isEdit ? 'neutral' : 'default'}
+              onClick={handleEdit}
+            >
+              {isEdit ? 'Отмена' : 'Редактировать'}
+            </Button>
+          </div>
+        </>
       )}
 
     </div>

@@ -29,14 +29,15 @@ module.exports = {
     ],
     '@typescript-eslint/promise-function-async': [1],
     'react/jsx-indent': [2, 2],
+    indent: 'off',
     'react/react-in-jsx-scope': [0],
-
     '@typescript-eslint/no-misused-promises': [
       2,
       {
         checksVoidReturn: false
       }
     ],
+    '@typescript-eslint/indent': [2, 2],
     '@typescript-eslint/no-invalid-void-type': [1],
     '@typescript-eslint/strict-boolean-expressions': [0],
     '@typescript-eslint/no-empty-interface': [1],
@@ -45,7 +46,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': [0],
     '@typescript-eslint/no-unused-vars': [1],
     '@typescript-eslint/consistent-type-assertions': [1],
-    'react/display-name': [1]
+    'react/display-name': [0]
   },
   globals: {
     __IS_DEV__: true
