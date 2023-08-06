@@ -1,9 +1,9 @@
-import React, { type ComponentProps, type MutableRefObject, useEffect, useLayoutEffect, useRef } from 'react'
+import React, { type ComponentProps, type MutableRefObject, useLayoutEffect, useRef } from 'react'
 import styles from './Page.module.scss'
 import cn from 'classnames'
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getScrollSave, getScrollSaveByPath, scrollSaveActions } from 'features/ScrollSave'
+import { getScrollSaveByPath, scrollSaveActions } from 'features/ScrollSave'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { type StateSchema } from 'app/providers/StoreProvider'
@@ -43,7 +43,7 @@ export const Page: React.FC<PageProps> = ({ children, onScrollEnd, className, ..
       {...rest}
     >
       {children}
-      <div ref={triggerRef}></div>
+      <div className="triggerElement" ref={triggerRef}></div>
     </section>
   )
 }

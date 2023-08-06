@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { type HTMLAttributeAnchorTarget, useCallback } from 'react'
 import styles from './ArticleList.module.scss'
 import cn from 'classnames'
 import { ArticleListItem, ArticleListItemSkeleton, type Article, ArticleView } from 'entities/Article'
@@ -8,6 +8,7 @@ interface ArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -19,11 +20,17 @@ const getSkeletons = (view: ArticleView) => {
 }
 
 export const ArticleList: React.FC<ArticleListProps> = (props) => {
-  const { isLoading, className, view = ArticleView.DEFAULT, articles } = props
+  const { isLoading, className, view = ArticleView.DEFAULT, articles, target } = props
 
   const renderArticle = useCallback((article: Article) => {
     return (
-      <ArticleListItem className={styles.articleItem} key={article.id} article={article} view={view} />
+      <ArticleListItem
+        className={styles.articleItem}
+        target={target}
+        key={article.id}
+        article={article}
+        view={view}
+      />
     )
   }, [view])
 

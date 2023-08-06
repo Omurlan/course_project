@@ -10,10 +10,10 @@ import {
 import { type ProfileSchema } from 'entities/Profile'
 import { type AxiosInstance } from 'axios'
 import { type ArticleSchema } from 'entities/Article'
-import { type ArticleCommentsSchema } from 'pages/ArticlePage/model/types/articleCommentsSchema'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type ScrollSaveSchema } from 'features/ScrollSave'
+import { type ArticlePageSchema } from 'pages/ArticlePage'
 
 export interface StateSchema {
   user: UserSchema
@@ -22,8 +22,8 @@ export interface StateSchema {
   // асинхронные редюсеры
   login?: LoginSchema
   article?: ArticleSchema
-  articleComments?: ArticleCommentsSchema
   profile?: ProfileSchema
+  articlePage?: ArticlePageSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
 }

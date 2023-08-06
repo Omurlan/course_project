@@ -1,0 +1,11 @@
+.articlePage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.recommendations {
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  overflow-x: scroll;
+}

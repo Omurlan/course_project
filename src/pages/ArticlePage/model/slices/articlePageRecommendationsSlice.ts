@@ -2,23 +2,24 @@ import {
   createEntityAdapter,
   createSlice, type PayloadAction
 } from '@reduxjs/toolkit'
-import { type Comment } from 'entities/Comment'
 import { type StateSchema } from 'app/providers/StoreProvider'
-import { type ArticleCommentsSchema } from '../types/articleCommentsSchema'
+import { type Article } from 'entities/Article'
+import { type ArticleRecommendationsSchema } from 'pages/ArticlePage'
 import {
-  fetchCommentsByArticleId
-} from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+  fetchArticleRecommendations
+} from 'pages/ArticlePage/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 
-const commentsAdapter = createEntityAdapter<Comment>({
-  selectId: (comment) => comment.id
+const recommendationsAdapter = createEntityAdapter<Article>({
+  selectId: (article) => article.id
 })
 
-export const getArticleComments =
-    commentsAdapter.getSelectors<StateSchema>((state) => state.articleComments ?? commentsAdapter.getInitialState())
+export const getArticleRecommendations =
+    recommendationsAdapter.getSelectors<StateSchema>((state) =>
+      state.articlePage?.recommendations ?? recommendationsAdapter.getInitialState())
 
-const articlePageCommentsSlice = createSlice({
+const articlePageRecommendationsSlice = createSlice({
   name: 'articlePageRecommendations',
-  initialState: commentsAdapter.getInitialState<ArticleCommentsSchema>({
+  initialState: recommendationsAdapter.getInitialState<ArticleRecommendationsSchema>({
     isLoading: false,
     error: null,
     ids: [],
@@ -28,19 +29,22 @@ const articlePageCommentsSlice = createSlice({
 
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchCommentsByArticleId.pending, (state) => {
+    builder.addCase(fetchArticleRecommendations.pending, (state) => {
       state.isLoading = true
       state.error = null
     })
-    builder.addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<Comment[]>) => {
+    builder.addCase(fetchArticleRecommendations.fulfilled, (state, action: PayloadAction<Article[]>) => {
       state.isLoading = false
-      commentsAdapter.setAll(state, action.payload)
+      recommendationsAdapter.setAll(state, action.payload)
     })
-    builder.addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+    builder.addCase(fetchArticleRecommendations.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.payload ?? null
     })
   }
 })
 
-export const { reducer: articleCommentsReducer, actions: articleCommentsActions } = articlePageCommentsSlice
+export const {
+  reducer: articlePageRecommendationsReducer,
+  actions: articlePageRecommendationsActions
+} = articlePageRecommendationsSlice
