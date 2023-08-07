@@ -7,6 +7,9 @@ import { Button } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
+import { Typography } from 'shared/ui/Typography/Typography'
+import { AppLink } from 'shared/ui/Link/AppLink'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface NavbarProps {
   className?: string
@@ -35,6 +38,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   return (
     <header className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
+
+      <Typography variant="heading">Omurlan APP</Typography>
+
+      <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
 
       <Button size="small" onClick={handleAuth}>
         {authData ? 'Выйти' : 'Войти'}
