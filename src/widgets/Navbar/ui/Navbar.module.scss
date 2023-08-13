@@ -13,4 +13,9 @@
     font-size: 25px;
     cursor: pointer;
   }
+
+  .rightSide {
+    display: flex;
+    gap: var(--spacing-md);
+  }
 }

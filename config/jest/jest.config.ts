@@ -46,7 +46,8 @@ export default {
     '\\.svg': path.resolve(__dirname, 'mocks', 'jestEmptyComponent.tsx')
   },
   globals: {
-    __IS_DEV__: false
+    __IS_DEV__: false,
+    __API__: ''
   }
 
   // Indicates whether the coverage information should be collected while executing the test

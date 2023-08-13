@@ -39,13 +39,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     <header className={cn(styles.navbar, className)}>
       <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
 
-      <Typography variant="heading">Omurlan APP</Typography>
+      <div className={styles.rightSide}>
+        <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
 
-      <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
-
-      <Button size="small" onClick={handleAuth}>
-        {authData ? 'Выйти' : 'Войти'}
-      </Button>
+        <Button size="small" onClick={handleAuth}>
+          {authData ? 'Выйти' : 'Войти'}
+        </Button>
+      </div>
 
       <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} />
     </header>
