@@ -13,6 +13,8 @@ interface PageProps extends ComponentProps<'div'> {
   onScrollEnd?: () => void
 }
 
+export const PAGE_ID = 'PAGE_ID'
+
 export const Page: React.FC<PageProps> = ({ children, onScrollEnd, className, ...rest }) => {
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
@@ -40,10 +42,11 @@ export const Page: React.FC<PageProps> = ({ children, onScrollEnd, className, ..
       onScroll={handleScroll}
       ref={wrapperRef}
       className={cn(styles.page, className)}
+      id={PAGE_ID}
       {...rest}
     >
       {children}
-      <div className="triggerElement" ref={triggerRef}></div>
+      {onScrollEnd && <div className="triggerElement" ref={triggerRef}></div>}
     </section>
   )
 }
