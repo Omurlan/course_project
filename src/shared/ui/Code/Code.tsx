@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Code.module.scss'
 import cn from 'classnames'
-import { Button } from 'shared/ui/Button/Button'
+import { Button } from '../Button/Button'
 import { AiOutlineCopy as CopyIcon } from 'react-icons/ai'
 
 interface CodeProps {

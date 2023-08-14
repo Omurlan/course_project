@@ -11,14 +11,14 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { AddCommentForm } from 'features/AddCommentForm'
-import { addCommentToArticle } from 'pages/ArticlePage/model/services/addCommentToArticle/addCommentToArticle'
+import { addCommentToArticle } from '../../model/services/addCommentToArticle/addCommentToArticle'
 import { Page } from 'widgets/Page/Page'
 import { getArticleRecommendations } from '../../model/slices/articlePageRecommendationsSlice'
-import { getArticleRecommendationsIsLoading } from 'pages/ArticlePage/model/selectors/recommendations'
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations'
 import { ArticleList } from 'widgets/ArticleList/ArticleList'
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 import { articlePageReducer } from '../../model/slices'
-import { ArticlePageHeader } from 'pages/ArticlePage/ui/ArticlePageHeader/ArticlePageHeader'
+import { ArticlePageHeader } from '../ArticlePageHeader/ArticlePageHeader'
 
 const reducers: ReducerList = {
   articlePage: articlePageReducer

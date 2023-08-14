@@ -8,8 +8,8 @@ import {
   getArticlesPageSearch,
   getArticlesPageSort,
   getArticlesPageType
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice'
+} from '../../selectors/articlesPageSelectors'
+import { articlesPageActions } from '../../slices/articlesPageSlice'
 import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 
 interface FetchArticlesListProps {

@@ -4,7 +4,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { BiHomeAlt2 as HomeIcon, BiNews as NewsIcon } from 'react-icons/bi'
 import { AiOutlineInfoCircle as AboutIcon } from 'react-icons/ai'
 import { CgProfile as ProfileIcon } from 'react-icons/cg'
-import { type SidebarItemType } from 'widgets/Sidebar/model/types/sidebar'
+import { type SidebarItemType } from '../types/sidebar'
 
 export const getSidebarItems = createSelector(
   getUserAuthData,

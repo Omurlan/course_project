@@ -13,7 +13,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors'
 import { ArticleList } from 'widgets/ArticleList/ArticleList'
 import { useSearchParams } from 'react-router-dom'
-import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 
 const reducers: ReducerList = {
   articlesPage: articlesPageReducer

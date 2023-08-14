@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import styles from './LoginModal.module.scss'
 import cn from 'classnames'
 import Modal from 'react-modal'
-import { LoginFormAsync } from 'features/AuthByUsername/ui/LoginForm/LoginForm.async'
+import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
 interface LoginModalProps {
   isOpen: boolean

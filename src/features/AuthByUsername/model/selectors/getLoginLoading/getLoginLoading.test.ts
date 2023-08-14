@@ -1,6 +1,6 @@
 import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
-import { getLoginLoading } from 'features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading'
+import { getLoginLoading } from '../getLoginLoading/getLoginLoading'
 
 describe('getUserInitiated.test', () => {
   test('loading false', () => {

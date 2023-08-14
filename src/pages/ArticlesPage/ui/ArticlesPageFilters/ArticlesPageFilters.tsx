@@ -6,16 +6,16 @@ import { type ArticleSortField, ArticleSortSelector, ArticleType, type ArticleVi
 import { Input } from 'shared/ui/Input/Input'
 import { type SortOrder } from 'shared/types'
 import { type TagOption } from 'features/Article/ui/ArticleTypeTags/ArticleTypeTags'
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice'
+import { articlesPageActions } from '../../model/slices/articlesPageSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import {
   getArticlesPageOrder, getArticlesPageSearch,
   getArticlesPageSort, getArticlesPageType,
   getArticlesPageView
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
+} from '../../model/selectors/articlesPageSelectors'
 
 interface ArticlesPageFiltersProps {
   className?: string

@@ -4,10 +4,10 @@ import {
 } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { type Article } from 'entities/Article'
-import { type ArticleRecommendationsSchema } from 'pages/ArticlePage'
+import { type ArticleRecommendationsSchema } from '../types/articleRecommendationsSchema'
 import {
   fetchArticleRecommendations
-} from 'pages/ArticlePage/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
+} from '../services/fetchArticleRecommendations/fetchArticleRecommendations'
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id

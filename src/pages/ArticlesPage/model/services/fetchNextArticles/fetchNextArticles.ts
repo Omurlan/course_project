@@ -3,9 +3,9 @@ import { type ThunkConfig } from 'app/providers/StoreProvider'
 import {
   getArticlesPageIsLoading, getArticlesPageLimit,
   getArticlesPageNum, getArticlesPageTotalCount
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice'
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList'
+} from '../../selectors/articlesPageSelectors'
+import { articlesPageActions } from '../../slices/articlesPageSlice'
+import { fetchArticlesList } from '../../services/fetchArticlesList/fetchArticlesList'
 
 export const fetchNextArticles = createAsyncThunk<void, void, ThunkConfig<string>>(
   'articlesPage/fetchNextArticles',

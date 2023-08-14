@@ -1,5 +1,6 @@
 import { Country, Currency } from 'shared/const/common'
-import { type Profile, validateProfileData } from 'entities/Profile'
+import { validateProfileData } from '../validateProfileData/validateProfileData'
+import { type Profile } from '../../types/profile'
 
 const wrongForm: Profile = {
   first: '',

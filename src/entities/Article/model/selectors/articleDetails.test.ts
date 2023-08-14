@@ -1,4 +1,4 @@
-import { getArticleData, getArticleError, getArticleIsLoading } from 'entities/Article/model/selectors/articleDetails'
+import { getArticleData, getArticleError, getArticleIsLoading } from '../selectors/articleDetails'
 import { type StateSchema } from 'app/providers/StoreProvider'
 
 describe('articleDetails.test', () => {

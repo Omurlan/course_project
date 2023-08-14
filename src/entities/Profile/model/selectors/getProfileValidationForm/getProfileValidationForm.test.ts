@@ -1,7 +1,7 @@
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { getProfileValidationForm } from './getProfileValidationForm'
 import { type ValidationForm } from 'shared/lib/validation/validateForm'
-import { type Profile } from 'entities/Profile'
+import { type Profile } from '../../types/profile'
 
 describe('getProfileValidationForm.test', () => {
   test('should return validation form object', () => {

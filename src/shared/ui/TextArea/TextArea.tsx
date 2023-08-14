@@ -1,7 +1,7 @@
 import React, { type ComponentProps, memo, useRef } from 'react'
 import styles from './TextArea.module.scss'
 import cn from 'classnames'
-import useAutosizeTextArea from 'shared/ui/TextArea/useAutosize'
+import useAutosizeTextArea from './useAutosize'
 
 interface TextAreaProps extends ComponentProps<'textarea'> {
   error?: boolean
