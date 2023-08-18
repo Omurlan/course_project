@@ -1,0 +1,39 @@
+.listbox {
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  display: block;
+  top: 33px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-normal);
+  background: var(--bg-color-input);
+  padding: var(--spacing-xs) 0;
+  width: 100%;
+  z-index: var(--z-index-important);
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 32px;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  background-color: var(--bg-color-input);
+  color: var(--text-color);
+  cursor: pointer;
+
+  &.selected {
+    background: var(--bg-color);
+  }
+
+  &.disabled {
+    opacity: 0.7;
+  }
+
+  &:hover {
+    background: var(--bg-color);
+  }
+}

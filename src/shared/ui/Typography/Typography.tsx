@@ -21,10 +21,10 @@ interface TypographyProps extends ComponentProps<'p'> {
 
 export const Typography =
     memo(({ variant, className, children, color = 'default', ...props }: TypographyProps) => {
-      const Component = variants[variant]
+      const Tag = variants[variant]
 
       return (
-        <Component className={cn(styles.text, className, {
+        <Tag className={cn(styles.text, className, {
           [styles.heading]: variant === 'heading',
           [styles.subheading]: variant === 'subheading',
           [styles.body]: variant === 'body',
@@ -33,6 +33,6 @@ export const Typography =
           [styles.error]: color === 'error'
         })} {...props}>
           {children}
-        </Component>
+        </Tag>
       )
     })

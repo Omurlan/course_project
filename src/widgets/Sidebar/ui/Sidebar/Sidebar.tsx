@@ -6,6 +6,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 export const Sidebar = memo(() => {
   const { open, toggleState } = useSidebar()
@@ -20,7 +21,7 @@ export const Sidebar = memo(() => {
   , [sidebarItemList])
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={cn(styles.sidebar, {
         [styles.collapsed]: !open
@@ -28,13 +29,13 @@ export const Sidebar = memo(() => {
     >
       <span onClick={toggleState} className={styles.background} />
 
-      <ul className={styles.list}>
+      <VStack role="navigation" className={styles.list}>
         {sidebarList}
-      </ul>
+      </VStack>
 
-      <div className={styles.switchers}>
+      <HStack justify="center" className={styles.switchers}>
         <ThemeSwitcher />
-      </div>
-    </menu>
+      </HStack>
+    </aside>
   )
 })

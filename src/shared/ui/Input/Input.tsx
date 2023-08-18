@@ -1,4 +1,4 @@
-import React, { type ComponentProps, memo } from 'react'
+import React, { type ComponentProps } from 'react'
 import styles from './Input.module.scss'
 import cn from 'classnames'
 
@@ -8,7 +8,7 @@ interface InputProps extends ComponentProps<'input'> {
   helperText?: string
 }
 
-export const Input = memo((props: InputProps) => {
+const ForwardedInput = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     className,
     helperText = '',
@@ -23,7 +23,7 @@ export const Input = memo((props: InputProps) => {
         <label className={styles.label}>{label}</label>
       )}
 
-      <input className={cn(styles.input, className, {
+      <input ref={ref} className={cn(styles.input, className, {
         [styles.error]: error
       })} {...rest} />
 
@@ -39,3 +39,5 @@ export const Input = memo((props: InputProps) => {
     </div>
   )
 })
+
+export const Input = React.memo(ForwardedInput)

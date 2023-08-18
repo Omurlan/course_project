@@ -19,6 +19,10 @@ body {
   padding-left: var(--sidebar-width);
 }
 
+ul {
+  list-style: none;
+}
+
 @media screen and (max-width: 860px) {
   .content-page {
     padding-left: 0;
