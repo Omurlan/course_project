@@ -4,6 +4,7 @@ import styles from './ArticleSortSelector.module.scss'
 import { type ChangeEventSelect, Select, type SelectOption } from 'shared/ui/Select/Select'
 import { ArticleSortField } from '../../../../entities/Article/model/types/article'
 import { type SortOrder } from 'shared/types'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticleSortSelectorProps {
   className?: string
@@ -62,7 +63,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   }, [onChangeOrder])
 
   return (
-    <div className={cn(styles.articleSortSelector, className)}>
+    <HStack gap={3} className={cn(className)}>
       <Select
         className={styles.select}
         label="Сортировать"
@@ -77,6 +78,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         options={orderOptions}
         onChange={handleOrderChange}
       />
-    </div>
+    </HStack>
   )
 })

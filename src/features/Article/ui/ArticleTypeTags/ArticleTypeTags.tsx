@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
-import styles from './ArticleTypeTags.module.scss'
 import cn from 'classnames'
 import { type ArticleType } from 'entities/Article'
 import { Tag } from 'shared/ui/Tag/Tag'
+import { HStack } from 'shared/ui/Stack'
 
 export interface TagOption {
   title: string
@@ -22,7 +22,7 @@ export const ArticleTypeTags = memo(({ types, activeType, onChangeType, classNam
   }
 
   return (
-    <div className={cn(styles.tagList, className)}>
+    <HStack gap={2} className={cn(className)}>
       {types.map(({ value, title }) => (
         <Tag
           active={activeType === value}
@@ -33,7 +33,7 @@ export const ArticleTypeTags = memo(({ types, activeType, onChangeType, classNam
           {title}
         </Tag>
       ))}
-    </div>
+    </HStack>
 
   )
 })

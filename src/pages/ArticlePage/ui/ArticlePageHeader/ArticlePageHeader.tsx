@@ -1,12 +1,11 @@
 import React, { useCallback } from 'react'
-import styles from './ArticlePageHeader.module.scss'
-import cn from 'classnames'
 import { Button } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getCanEditArticle } from '../../model/selectors/article'
 import { getArticleData } from 'entities/Article'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticlePageHeaderProps {
 
@@ -28,7 +27,7 @@ export const ArticlePageHeader: React.FC<ArticlePageHeaderProps> = () => {
   }
 
   return (
-    <div className={styles.articlePageHeader}>
+    <HStack justify="between" align="center" max>
       <Button
         onClick={onBackToList}
         variant="outline"
@@ -37,10 +36,10 @@ export const ArticlePageHeader: React.FC<ArticlePageHeaderProps> = () => {
       </Button>
 
       {canEdit && (
-        <Button onClick={onEditArticle} className={styles.editBtn}>
+        <Button onClick={onEditArticle}>
           Редактировать
         </Button>
       )}
-    </div>
+    </HStack>
   )
 }

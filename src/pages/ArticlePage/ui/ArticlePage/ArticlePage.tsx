@@ -19,6 +19,7 @@ import { ArticleList } from 'widgets/ArticleList/ArticleList'
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 import { articlePageReducer } from '../../model/slices'
 import { ArticlePageHeader } from '../ArticlePageHeader/ArticlePageHeader'
+import { VStack } from 'shared/ui/Stack'
 
 const reducers: ReducerList = {
   articlePage: articlePageReducer
@@ -51,7 +52,7 @@ const ArticlePage = memo(() => {
   return (
     <AsyncReducer reducers={reducers} destroyOnUnmount>
       <Page>
-        <div className={styles.articlePage}>
+        <VStack max gap={4}>
           <ArticlePageHeader />
 
           <ArticleDetails id={id} />
@@ -72,7 +73,7 @@ const ArticlePage = memo(() => {
             isLoading={commentsIsLoading}
             comments={comments}
           />
-        </div>
+        </VStack>
       </Page>
     </AsyncReducer>
   )

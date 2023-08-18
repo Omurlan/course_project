@@ -5,6 +5,7 @@ import { type IconType } from 'react-icons'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
 import cn from 'classnames'
 import { Button } from 'shared/ui/Button/Button'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticleViewSelectorProps {
   className?: string
@@ -31,7 +32,7 @@ export const ArticleViewSelector: React.FC<ArticleViewSelectorProps> = (props) =
   }
 
   return (
-    <div className={cn(styles.articleViewSelector, className)}>
+    <HStack gap={1} className={cn(className)}>
       {viewTypes.map(({ view, Icon }) => (
         <Button
           variant={view === currentView ? 'default' : 'outline'}
@@ -41,6 +42,6 @@ export const ArticleViewSelector: React.FC<ArticleViewSelectorProps> = (props) =
           <Icon />
         </Button>
       ))}
-    </div>
+    </HStack>
   )
 }

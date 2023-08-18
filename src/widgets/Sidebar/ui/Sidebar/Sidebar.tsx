@@ -3,7 +3,7 @@ import styles from './Sidebar.module.scss'
 import cn from 'classnames'
 import { useSidebar } from 'app/providers/SidebarProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
+import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 

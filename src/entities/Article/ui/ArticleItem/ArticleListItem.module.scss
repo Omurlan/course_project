@@ -1,22 +1,5 @@
-.default .card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-
+.default {
   .views {
-    margin-left: auto;
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-  }
-
-  .avatar {
-    margin-right: var(--spacing-xs);
-  }
-
-  .date {
     margin-left: auto;
   }
 
@@ -37,10 +20,7 @@
   }
 }
 
-.plate .card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
+.plate {
   width: 230px;
 
   .imageWrapper {
@@ -62,8 +42,6 @@
   }
 
   .infoWrapper {
-    display: flex;
-    align-items: center;
     margin-top: var(--spacing-xs);
   }
 

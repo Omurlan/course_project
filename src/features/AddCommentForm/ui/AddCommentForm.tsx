@@ -11,6 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice'
 import { AsyncReducer, type ReducerList } from 'shared/lib/components/AsyncReducer/AsyncReducer'
 import { TextArea } from 'shared/ui/TextArea/TextArea'
+import { VStack } from 'shared/ui/Stack'
 
 export interface AddCommentFormProps {
   className?: string
@@ -37,14 +38,14 @@ const AddCommentForm: React.FC<AddCommentFormProps> = ({ className, onSendCommen
 
   return (
     <AsyncReducer reducers={reducers} destroyOnUnmount>
-      <div className={cn(styles.addCommentForm, className)}>
+      <VStack max gap={2} align="end" className={cn(className)}>
         <TextArea
           onChange={onTextChange}
           placeholder="Введите текст комментария"
           value={text}
         />
-        <Button onClick={onSendHandler} className={styles.submit}>Отправить</Button>
-      </div>
+        <Button onClick={onSendHandler}>Отправить</Button>
+      </VStack>
     </AsyncReducer>
   )
 }

@@ -1,6 +1,4 @@
 import React, { memo } from 'react'
-import styles from './ProfilePageHeader.module.scss'
-import cn from 'classnames'
 import { Typography } from 'shared/ui/Typography/Typography'
 import { Button } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
@@ -14,10 +12,7 @@ import {
 } from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from 'entities/User'
-
-interface ProfilePageHeaderProps {
-
-}
+import { HStack } from 'shared/ui/Stack'
 
 export const ProfilePageHeader = memo(() => {
   const isEdit = useSelector(getProfileIsEdit)
@@ -46,28 +41,26 @@ export const ProfilePageHeader = memo(() => {
   }
 
   return (
-    <div className={styles.profilePageHeader}>
+    <HStack justify="between">
       <Typography variant="heading">Профиль</Typography>
 
       {canEdit && (
-        <>
-          <div className={styles.actions}>
-            {isEdit && (
-              <Button onClick={submitEdit}>
-                Сохранить
-              </Button>
-            )}
-
-            <Button
-              variant={isEdit ? 'neutral' : 'default'}
-              onClick={handleEdit}
-            >
-              {isEdit ? 'Отмена' : 'Редактировать'}
+        <HStack>
+          {isEdit && (
+            <Button onClick={submitEdit}>
+              Сохранить
             </Button>
-          </div>
-        </>
+          )}
+
+          <Button
+            variant={isEdit ? 'neutral' : 'default'}
+            onClick={handleEdit}
+          >
+            {isEdit ? 'Отмена' : 'Редактировать'}
+          </Button>
+        </HStack>
       )}
 
-    </div>
+    </HStack>
   )
 })

@@ -1,5 +1,4 @@
 import React, { type ChangeEvent, useCallback } from 'react'
-import styles from './ArticlePageFilters.module.scss'
 import cn from 'classnames'
 import { ArticleTypeTags, ArticleViewSelector } from 'features/Article'
 import { type ArticleSortField, ArticleSortSelector, ArticleType, type ArticleView } from 'entities/Article'
@@ -16,6 +15,7 @@ import {
   getArticlesPageSort, getArticlesPageType,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ArticlesPageFiltersProps {
   className?: string
@@ -88,14 +88,14 @@ export const ArticlesPageFilters: React.FC<ArticlesPageFiltersProps> = ({ classN
   }, [fetchData])
 
   return (
-    <div className={cn(styles.articleFilters, className)}>
+    <VStack max gap={4} className={cn(className)}>
       <Input
         value={search}
         onChange={handleChangeSearch}
         placeholder="Поиск"
       />
 
-      <div className={styles.sortWrapper}>
+      <HStack justify="between" align="end" max>
         <ArticleSortSelector
           sort={sort}
           order={order}
@@ -103,13 +103,13 @@ export const ArticlesPageFilters: React.FC<ArticlesPageFiltersProps> = ({ classN
           onChangeSort={handleChangeSort}
         />
         <ArticleViewSelector currentView={view} onViewClick={handleChangeView} />
-      </div>
+      </HStack>
 
       <ArticleTypeTags
         types={articleTypes}
         onChangeType={handleChangeType}
         activeType={type}
       />
-    </div>
+    </VStack>
   )
 }
