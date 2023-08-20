@@ -24,11 +24,7 @@ export const Typography =
       const Tag = variants[variant]
 
       return (
-        <Tag className={cn(styles.text, className, {
-          [styles.heading]: variant === 'heading',
-          [styles.subheading]: variant === 'subheading',
-          [styles.body]: variant === 'body',
-          [styles.caption]: variant === 'caption',
+        <Tag className={cn(styles.text, variant, className, {
           [styles.primary]: color === 'primary',
           [styles.error]: color === 'error'
         })} {...props}>

@@ -18,7 +18,7 @@
 
   .list {
     position: relative;
-    padding: 15px;
+    padding: var(--spacing-md);
     background: var(--bg-color);
     height: 100%;
     z-index: var(--z-index-important);

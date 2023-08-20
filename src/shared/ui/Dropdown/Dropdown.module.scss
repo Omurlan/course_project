@@ -1,0 +1,56 @@
+.dropdown {
+  position: relative;
+}
+
+.button {
+  background: transparent;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  box-shadow: var(--shadow-normal);
+  padding: var(--spacing-xs) 0;
+  min-width: 130px;
+  background: var(--bg-color-input);
+  border-radius: var(--border-radius);
+
+  &.bottomRight {
+    top: 100%;
+    left: 0;
+  }
+
+  &.bottomLeft {
+    top: 100%;
+    right: 0;
+  }
+
+  &.topRight {
+    bottom: 100%;
+    left: 0;
+  }
+
+  &.topLeft {
+    bottom: 100%;
+    right: 0;
+  }
+}
+
+.item {
+  color: var(--text-color);
+  height: 32px;
+  width: 100%;
+  text-align: start;
+  padding: 0 var(--spacing-sm);
+  background: var(--bg-color-input);
+  cursor: pointer;
+  border: none;
+
+  &.active {
+    background: var(--bg-color);
+  }
+}

@@ -11,6 +11,36 @@
   --font-size-lg: 18px;
   --font-size-xl: 24px;
 
+  // typography variants
+  .heading {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+  }
+
+  .subheading {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+  }
+
+  .body {
+    font-size: var(--font-size-md);
+    font-weight: normal;
+  }
+
+  .caption {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+  }
+
+  // colors
+  .primary {
+    color: var(--primary-color);
+  }
+
+  .error {
+    color: var(--error-color);
+  }
+
   //  Размеры
   --navbar-height: 50px;
   --sidebar-width: 220px;

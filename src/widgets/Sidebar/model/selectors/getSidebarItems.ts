@@ -3,7 +3,6 @@ import { getUserAuthData } from 'entities/User'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { BiHomeAlt2 as HomeIcon, BiNews as NewsIcon } from 'react-icons/bi'
 import { AiOutlineInfoCircle as AboutIcon } from 'react-icons/ai'
-import { CgProfile as ProfileIcon } from 'react-icons/cg'
 import { type SidebarItemType } from '../types/sidebar'
 
 export const getSidebarItems = createSelector(
@@ -28,12 +27,6 @@ export const getSidebarItems = createSelector(
           title: 'Статьи',
           path: RoutePath.articles,
           Icon: NewsIcon,
-          authOnly: true
-        },
-        {
-          title: 'Профиль',
-          path: RoutePath.profile + userData.id,
-          Icon: ProfileIcon,
           authOnly: true
         }
       )

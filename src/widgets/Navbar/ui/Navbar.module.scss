@@ -1,21 +1,13 @@
-.navbar {
+.stack {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: var(--navbar-height);
   background: var(--navbar-color);
-  padding: 0 30px;
+  padding: 0 var(--spacing-md);
   z-index: var(--z-index-important);
 
   .burgerIcon {
     color: var(--text-color);
     font-size: 25px;
     cursor: pointer;
-  }
-
-  .rightSide {
-    display: flex;
-    gap: var(--spacing-md);
   }
 }

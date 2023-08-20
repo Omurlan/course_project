@@ -7,9 +7,11 @@ import { Button } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
-import { Typography } from 'shared/ui/Typography/Typography'
 import { AppLink } from 'shared/ui/Link/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Dropdown, type DropdownItem } from 'shared/ui/Dropdown/Dropdown'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { HStack } from 'shared/ui/Stack'
 
 interface NavbarProps {
   className?: string
@@ -35,19 +37,43 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }
   }
 
+  const items: DropdownItem[] = [
+    {
+      content: 'Профиль',
+      href: authData && RoutePath.profile + authData.id
+    },
+    {
+      content: 'Выйти',
+      onClick: handleAuth
+    }
+  ]
+
   return (
     <header className={cn(styles.navbar, className)}>
-      <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
+      <HStack justify="between" align="center" className={styles.stack}>
+        <GiHamburgerMenu onClick={toggleState} className={styles.burgerIcon} />
 
-      <div className={styles.rightSide}>
-        <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
+        <HStack align="center" gap={4}>
+          <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
 
-        <Button size="small" onClick={handleAuth}>
-          {authData ? 'Выйти' : 'Войти'}
-        </Button>
-      </div>
+          {authData && (
+            <Dropdown
+              direction="bottom left"
+              items={items}
+              trigger={<Avatar size={30} src={authData?.avatar} />}
+            />
+          )}
 
+          {!authData && (
+            <Button size="small" onClick={handleAuth}>
+              Войти
+            </Button>
+          )}
+        </HStack>
+
+      </HStack>
       <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} />
+
     </header>
   )
 })

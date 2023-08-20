@@ -45,11 +45,12 @@ export const Listbox = <T extends string>(props: ListboxProps<T>) => {
             key={item.value}
             value={item}
             as={Fragment}>
-            {({ selected, disabled }) => (
+            {({ selected, disabled, active }) => (
               <li
                 className={cn(styles.item, {
                   [styles.selected]: selected,
-                  [styles.disabled]: disabled
+                  [styles.disabled]: disabled,
+                  [styles.active]: active
                 })}
               >
                 {item.title}
