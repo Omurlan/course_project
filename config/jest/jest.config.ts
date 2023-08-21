@@ -48,7 +48,15 @@ export default {
   globals: {
     __IS_DEV__: false,
     __API__: ''
-  }
+  },
+  reporters: [
+    'default',
+    ['jest-html-reporter', {
+      outputPath: '<rootDir>/reports/unit/report.html',
+      pageTitle: 'Тесты',
+      inlineSource: true
+    }]
+  ]
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
