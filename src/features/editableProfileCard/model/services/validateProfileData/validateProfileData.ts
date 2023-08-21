@@ -1,4 +1,4 @@
-import type { Profile } from '../../types/profile'
+import type { Profile } from '../../../../../entities/Profile/model/types/profile'
 import { validateForm, type ValidationForm } from 'shared/lib/validation/validateForm'
 
 export const validateProfileData = (profile?: Profile): ValidationForm<keyof Profile> => {

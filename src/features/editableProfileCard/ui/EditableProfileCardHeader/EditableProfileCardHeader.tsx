@@ -5,16 +5,17 @@ import { useSelector } from 'react-redux'
 import {
   getProfileData,
   getProfileForm,
-  getProfileIsEdit,
-  profileActions,
-  updateProfileData,
-  validateProfileData
-} from 'entities/Profile'
+  getProfileIsEdit
+} from '../../model/selectors/editableProfileCardSelectors'
+import { profileActions } from '../../model/slice/profileSlice'
+import { validateProfileData } from '../../model/services/validateProfileData/validateProfileData'
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
+
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from 'entities/User'
 import { HStack } from 'shared/ui/Stack'
 
-export const ProfilePageHeader = memo(() => {
+export const EditableProfileCardHeader = memo(() => {
   const isEdit = useSelector(getProfileIsEdit)
   const profileForm = useSelector(getProfileForm)
 
@@ -60,7 +61,6 @@ export const ProfilePageHeader = memo(() => {
           </Button>
         </HStack>
       )}
-
     </HStack>
   )
 })

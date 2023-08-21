@@ -1,5 +1,4 @@
 import { type Country, type Currency } from 'shared/const/common'
-import { type ValidationForm } from 'shared/lib/validation/validateForm'
 
 export interface Profile {
   id?: string
@@ -11,13 +10,4 @@ export interface Profile {
   city?: string
   username?: string
   avatar?: string
-}
-
-export interface ProfileSchema {
-  data?: Profile
-  form?: Profile
-  isLoading: boolean
-  error: string | null
-  isEdit: boolean
-  validationForm: ValidationForm<keyof Profile>
 }

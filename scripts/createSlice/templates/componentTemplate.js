@@ -13,9 +13,9 @@ export const ${componentName} = memo((props: ${componentName}Props) => {
   const { className } = props
     
   return (
-      <div className={cn(styles.${componentName.toLowerCase()}, className)}>
-              
-      </div>
+    <div className={cn(styles.${componentName.toLowerCase()}, className)}>
+            
+    </div>
   )  
 })`
 }
