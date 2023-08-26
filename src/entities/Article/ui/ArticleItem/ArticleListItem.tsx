@@ -33,19 +33,17 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
   if (view === ArticleView.PLATE) {
     return (
       <AppLink target={target} to={RoutePath.article + article.id}>
-        <HStack className={cn(styles.plate, className)}>
-          <Card>
-            <div className={styles.imageWrapper}>
-              <img src={article.img} className={styles.img} alt={article.title} />
-              <Typography className={styles.date} variant="caption" >{article.createdAt}</Typography>
-            </div>
-            <HStack align="center" className={styles.infoWrapper}>
-              {types}
-              {views}
-            </HStack>
-            <Typography className={styles.title} variant="subheading">{article.title}</Typography>
-          </Card>
-        </HStack>
+        <Card className={cn(styles.plate, className)}>
+          <div className={styles.imageWrapper}>
+            <img src={article.img} className={styles.img} alt={article.title} />
+            <Typography className={styles.date} variant="caption" >{article.createdAt}</Typography>
+          </div>
+          <HStack align="center" className={styles.infoWrapper}>
+            {types}
+            {views}
+          </HStack>
+          <Typography className={styles.title} variant="subheading">{article.title}</Typography>
+        </Card>
       </AppLink>
     )
   }
@@ -53,32 +51,30 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
   const textBlock = article.blocks.find((block) => block.type === 'TEXT') as ArticleTextBlock
 
   return (
-    <div className={cn(styles.default, className)}>
-      <Card>
-        <VStack gap={3}>
-          <HStack justify="between" max>
-            <HStack align="center" gap={2}>
-              <Avatar size={30} src={article.user.avatar} />
-              <Typography variant="body">{article.user.username}</Typography>
-            </HStack>
-            <Typography variant="body">{article.createdAt}</Typography>
+    <Card className={cn(styles.default, className)}>
+      <VStack gap={3}>
+        <HStack justify="between" max>
+          <HStack align="center" gap={2}>
+            <Avatar size={30} src={article.user.avatar} />
+            <Typography variant="body">{article.user.username}</Typography>
           </HStack>
+          <Typography variant="body">{article.createdAt}</Typography>
+        </HStack>
 
-          <Typography className={styles.title} variant="subheading">{article.title}</Typography>
-          {types}
+        <Typography className={styles.title} variant="subheading">{article.title}</Typography>
+        {types}
 
-          <img className={styles.img} src={article.img} alt={article.title} />
-          {textBlock && (
-            <ArticleTextBlockComponent className={styles.textBlock} block={textBlock} />
-          ) }
-          <HStack align="end" justify="between" max>
-            <AppLink target={target} to={RoutePath.article + article.id}>
-              <Button variant="outline">Читать далее...</Button>
-            </AppLink>
-            {views}
-          </HStack>
-        </VStack>
-      </Card>
-    </div>
+        <img className={styles.img} src={article.img} alt={article.title} />
+        {textBlock && (
+          <ArticleTextBlockComponent className={styles.textBlock} block={textBlock} />
+        )}
+        <HStack align="end" justify="between" max>
+          <AppLink target={target} to={RoutePath.article + article.id}>
+            <Button variant="outline">Читать далее...</Button>
+          </AppLink>
+          {views}
+        </HStack>
+      </VStack>
+    </Card>
   )
 }

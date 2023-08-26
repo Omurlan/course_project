@@ -31,7 +31,7 @@ export const CommentCard = React.memo(({ comment, isLoading, className }: Commen
   return (
     <div className={cn(styles.comment, className)}>
       <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
-        {comment.user.avatar && <Avatar width={45} height={45} src={comment.user.avatar} />}
+        {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
         <Typography variant="body">{comment.user.username}</Typography>
       </AppLink>
       <Typography variant="body">{comment.text}</Typography>

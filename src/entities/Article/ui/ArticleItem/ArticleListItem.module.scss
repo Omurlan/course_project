@@ -21,7 +21,8 @@
 }
 
 .plate {
-  width: 230px;
+  max-width: 230px;
+  min-width: 230px;
 
   .imageWrapper {
     width: 100%;
@@ -52,15 +53,10 @@
     text-overflow: ellipsis;
   }
 
-  .views {
-    margin-left: auto;
-    margin-right: var(--spacing-xs);
-  }
-
   .title {
-    width: 100%;
+    max-width: 100%;
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 }

@@ -24,7 +24,7 @@ const rightForm: Profile = {
   username: 'Omurlan'
 }
 
-describe('validateProfileData.test', () => {
+describe('features/validateProfileData.test', () => {
   test('wrong form', () => {
     const result = validateProfileData(wrongForm)
 

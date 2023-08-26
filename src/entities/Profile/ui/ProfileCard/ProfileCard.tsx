@@ -27,11 +27,12 @@ interface Field {
   placeholder: string
   label: string
   errorMessage: string
+  'data-testid'?: string
   type: 'input' | 'select'
   options?: SelectOption[]
 }
 
-const fields: Field[] = [
+export const profileFields: Field[] = [
   {
     name: 'first',
     label: 'Имя',
@@ -108,7 +109,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, validationFor
       <div className={styles.profileData}>
         <Avatar style={{ margin: '0 auto' }} src={avatar} alt="Аватар" />
 
-        {fields.map(({ name, options, placeholder, label, type, errorMessage }) => {
+        {profileFields.map(({ name, options, placeholder, label, type, errorMessage }) => {
           if (type === 'input') {
             return (
               <Input
@@ -121,6 +122,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, validationFor
                 onChange={handleChangeInput}
                 readOnly={!isEdit}
                 value={profile?.[name]}
+                data-testid={`ProfileCard.${name}`}
               />
             )
           }
@@ -137,6 +139,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ profile, validationFor
               disabled={!isEdit}
               selected={profile?.[name] ? profile[name] as string : null}
               options={options ?? []}
+              data-testid={`ProfileCard.${name}`}
             />
           )
         })}

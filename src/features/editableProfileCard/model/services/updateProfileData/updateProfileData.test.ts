@@ -13,7 +13,7 @@ const profileData = {
   id: '1'
 }
 
-describe('updateProfileData.test', () => {
+describe('features/updateProfileData.test', () => {
   test('success update profile data', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {

@@ -13,7 +13,7 @@ interface ArticleListItemSkeletonProps {
 export const ArticleListItemSkeleton: React.FC<ArticleListItemSkeletonProps> = ({ className, view }) => {
   if (view === ArticleView.PLATE) {
     return (
-      <div className={cn(styles.articleListItem, styles.plate, className)}>
+      <div className={cn(styles.plate, className)}>
         <Card className={styles.card}>
           <div className={styles.imageWrapper}>
             <Skeleton width={200} height={200} className={styles.img} />
@@ -28,7 +28,7 @@ export const ArticleListItemSkeleton: React.FC<ArticleListItemSkeletonProps> = (
   }
 
   return (
-    <div className={cn(styles.articleListItem, styles.default, className)}>
+    <div className={cn(styles.default, className)}>
       <Card className={styles.card}>
         <div className={styles.header}>
           <Skeleton border="50%" width={30} height={30} className={styles.avatar} />

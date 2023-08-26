@@ -1,4 +1,4 @@
-import type { Profile } from '../../../../../entities/Profile/model/types/profile'
+import type { Profile } from 'entities/Profile'
 import { validateForm, type ValidationForm } from 'shared/lib/validation/validateForm'
 
 export const validateProfileData = (profile?: Profile): ValidationForm<keyof Profile> => {
@@ -12,7 +12,7 @@ export const validateProfileData = (profile?: Profile): ValidationForm<keyof Pro
     {
       value: first,
       field: 'first',
-      pattern: /^[a-zA-Zа-яА-Я]+$/
+      pattern: /^[a-zA-Zа-яА-Я0-9]+$/
     },
     {
       value: country,
@@ -32,7 +32,7 @@ export const validateProfileData = (profile?: Profile): ValidationForm<keyof Pro
     {
       value: username,
       field: 'username',
-      pattern: /^[a-zA-Zа-яА-Я]+$/
+      pattern: /^[a-zA-Zа-яА-Я0-9]+$/
     },
     {
       value: age,
@@ -45,7 +45,7 @@ export const validateProfileData = (profile?: Profile): ValidationForm<keyof Pro
     {
       value: lastname,
       field: 'lastname',
-      pattern: /^[a-zA-Zа-яА-Я]+$/
+      pattern: /^[a-zA-Zа-яА-Я0-9]+$/
     },
     {
       value: city,

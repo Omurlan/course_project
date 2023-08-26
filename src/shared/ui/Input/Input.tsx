@@ -23,9 +23,11 @@ const ForwardedInput = React.forwardRef<HTMLInputElement, InputProps>((props, re
         <label className={styles.label}>{label}</label>
       )}
 
-      <input ref={ref} className={cn(styles.input, className, {
-        [styles.error]: error
-      })} {...rest} />
+      <input
+        ref={ref}
+        className={cn(styles.input, className, { [styles.error]: error })}
+        {...rest}
+      />
 
       {helperText && (
         <span

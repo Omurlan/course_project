@@ -51,6 +51,7 @@ module.exports = {
     'react/display-name': [0]
   },
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: 'readonly',
+    __ENVIRONMENT__: 'readonly'
   }
 }

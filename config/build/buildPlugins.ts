@@ -23,7 +23,8 @@ export function buildPlugins ({
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
-      __API__: JSON.stringify(apiUrl)
+      __API__: JSON.stringify(apiUrl),
+      __ENVIRONMENT__: JSON.stringify('web')
     }),
     new CopyPlugin({
       patterns: [{ from: paths.locales, to: paths.buildLocales }]

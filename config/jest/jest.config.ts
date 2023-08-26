@@ -47,7 +47,8 @@ export default {
   },
   globals: {
     __IS_DEV__: false,
-    __API__: ''
+    __API__: '',
+    __ENVIRONMENT__: 'jest'
   },
   reporters: [
     'default',

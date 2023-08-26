@@ -12,7 +12,7 @@ const profileData = {
   username: 'Omurlan'
 }
 
-describe('fetchProfileData.test', () => {
+describe('features/fetchProfileData.test', () => {
   test('success fetch profile data', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData)
     thunk.api.get.mockReturnValue(Promise.resolve({ data: profileData }))

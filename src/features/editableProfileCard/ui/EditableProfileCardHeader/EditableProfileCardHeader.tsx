@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useCallback } from 'react'
 import { Typography } from 'shared/ui/Typography/Typography'
 import { Button } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
@@ -10,10 +10,11 @@ import {
 import { profileActions } from '../../model/slice/profileSlice'
 import { validateProfileData } from '../../model/services/validateProfileData/validateProfileData'
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
-
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from 'entities/User'
 import { HStack } from 'shared/ui/Stack'
+
+const TEST_ID_PREFIX = 'EditableProfileCardHeader'
 
 export const EditableProfileCardHeader = memo(() => {
   const isEdit = useSelector(getProfileIsEdit)
@@ -26,12 +27,15 @@ export const EditableProfileCardHeader = memo(() => {
 
   const canEdit = authData?.id === profileData?.id
 
-  const handleEdit = () => {
-    if (isEdit) dispatch(profileActions.cancelEdit())
-    else dispatch(profileActions.startEdit())
-  }
+  const handleEdit = useCallback(() => {
+    dispatch(profileActions.startEdit())
+  }, [])
 
-  const submitEdit = (): void => {
+  const handleCancel = useCallback(() => {
+    dispatch(profileActions.cancelEdit())
+  }, [])
+
+  const submitEdit = () => {
     const validated = validateProfileData(profileForm)
 
     if (Object.keys(validated).length) {
@@ -47,18 +51,31 @@ export const EditableProfileCardHeader = memo(() => {
 
       {canEdit && (
         <HStack>
-          {isEdit && (
-            <Button onClick={submitEdit}>
-              Сохранить
+          {!isEdit && (
+            <Button
+              data-testid={`${TEST_ID_PREFIX}.EditButton`}
+              variant={isEdit ? 'neutral' : 'default'}
+              onClick={handleEdit}
+            >
+              Редактировать
             </Button>
           )}
 
-          <Button
-            variant={isEdit ? 'neutral' : 'default'}
-            onClick={handleEdit}
-          >
-            {isEdit ? 'Отмена' : 'Редактировать'}
-          </Button>
+          {isEdit && (
+            <>
+              <Button data-testid={`${TEST_ID_PREFIX}.SaveButton`} onClick={submitEdit}>
+                Сохранить
+              </Button>
+
+              <Button
+                data-testid={`${TEST_ID_PREFIX}.CancelButton`}
+                variant={isEdit ? 'neutral' : 'default'}
+                onClick={handleCancel}
+              >
+                Отмена
+              </Button>
+            </>
+          )}
         </HStack>
       )}
     </HStack>
