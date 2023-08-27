@@ -1,5 +1,4 @@
 import React, { type ChangeEvent, useCallback } from 'react'
-import styles from './AddCommentForm.module.scss'
 import cn from 'classnames'
 import { Button } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'

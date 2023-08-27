@@ -1,10 +1,7 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo } from 'react'
 import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router-dom'
-import { Typography } from 'shared/ui/Typography/Typography'
 import { AsyncReducer, type ReducerList } from 'shared/lib/components/AsyncReducer/AsyncReducer'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { Page } from 'widgets/Page/Page'
 import { articlePageReducer } from '../../model/slices'
 import { ArticlePageHeader } from '../ArticlePageHeader/ArticlePageHeader'
@@ -18,12 +15,6 @@ const reducers: ReducerList = {
 
 const ArticlePage = memo(() => {
   const { id } = useParams<{ id: string }>()
-
-  if (!id) {
-    return (
-      <Typography variant="heading">Статья не найдена</Typography>
-    )
-  }
 
   return (
     <AsyncReducer reducers={reducers} destroyOnUnmount>

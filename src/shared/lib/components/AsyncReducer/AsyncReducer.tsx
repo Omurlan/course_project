@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { type ReactNode, useEffect } from 'react'
 import { type Reducer } from '@reduxjs/toolkit'
 import { type ReduxWithManager, type StateSchema, type StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema'
 import { useDispatch, useStore } from 'react-redux'
@@ -10,6 +10,7 @@ export type ReducerList = {
 interface AsyncReducerLoaderProps {
   reducers: ReducerList
   destroyOnUnmount?: boolean
+  children: ReactNode
 }
 
 export const AsyncReducer: React.FC<AsyncReducerLoaderProps> = ({ reducers, children, destroyOnUnmount = false }) => {

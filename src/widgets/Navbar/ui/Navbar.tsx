@@ -6,12 +6,13 @@ import { useSidebar } from 'app/providers/SidebarProvider'
 import { Button } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, userActions } from 'entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { AppLink } from 'shared/ui/Link/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Dropdown, type DropdownItem } from 'shared/ui/Dropdown/Dropdown'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { HStack } from 'shared/ui/Stack'
+import { getUserRoles } from 'entities/User/model/selectors/roleSelectors'
 
 interface NavbarProps {
   className?: string
@@ -20,6 +21,8 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { toggleState } = useSidebar()
   const dispatch = useDispatch()
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
 
   const authData = useSelector(getUserAuthData)
 
@@ -37,6 +40,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }
   }
 
+  const isAdminPanelAvailable = isAdmin || isManager
+
   const items: DropdownItem[] = [
     {
       content: 'Профиль',
@@ -47,6 +52,15 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       onClick: handleAuth
     }
   ]
+
+  if (isAdminPanelAvailable) {
+    items.unshift(
+      {
+        content: 'Админ панель',
+        href: RoutePath.admin_panel
+      }
+    )
+  }
 
   return (
     <header className={cn(styles.navbar, className)}>

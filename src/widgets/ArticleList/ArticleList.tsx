@@ -87,6 +87,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         scrollTop
       }) => (
         <div
+          // @ts-expect-error ignore
           ref={registerChild}
           className={cn(styles.articleList, className, {
             [styles.default]: view === ArticleView.DEFAULT,

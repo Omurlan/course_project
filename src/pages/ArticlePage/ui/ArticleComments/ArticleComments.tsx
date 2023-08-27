@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { Suspense, useCallback, useEffect } from 'react'
 import { Typography } from 'shared/ui/Typography/Typography'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { CommentList } from 'entities/Comment'
@@ -12,7 +12,7 @@ import {
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 interface ArticleCommentsProps {
-  id: string
+  id?: string
 }
 
 const ArticleComments: React.FC<ArticleCommentsProps> = ({ id }) => {
@@ -32,7 +32,11 @@ const ArticleComments: React.FC<ArticleCommentsProps> = ({ id }) => {
   return (
     <div>
       <Typography variant="subheading">Комментарии</Typography>
-      <AddCommentForm onSendComment={onSendComment} />
+
+      <Suspense fallback="Идет загрузка">
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
+
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}

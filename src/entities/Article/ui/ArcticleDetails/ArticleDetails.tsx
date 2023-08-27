@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
 import styles from './ArticleDetails.module.scss'
-import cn from 'classnames'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
@@ -17,7 +16,7 @@ import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
 
 interface ArticleProps {
-  id: string
+  id?: string
 }
 
 const reducers: ReducerList = {
@@ -31,7 +30,7 @@ export const ArticleDetails = React.memo(({ id }: ArticleProps) => {
   const isLoading = useSelector(getArticleIsLoading)
   const error = useSelector(getArticleError)
 
-  const renderBlock = useCallback((block: ArticleBlock, index) => {
+  const renderBlock = useCallback((block: ArticleBlock, index: number) => {
     switch (block.type) {
       case 'CODE':
         return <ArticleCodeBlock key={index} className={styles.block} block={block} />
