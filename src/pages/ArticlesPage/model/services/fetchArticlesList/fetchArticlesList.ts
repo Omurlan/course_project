@@ -9,14 +9,18 @@ import {
   getArticlesPageSort,
   getArticlesPageType
 } from '../../selectors/articlesPageSelectors'
-import { articlesPageActions } from '../../slices/articlesPageSlice'
 import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 
 interface FetchArticlesListProps {
   replace?: boolean
 }
 
-export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListProps, ThunkConfig<string>>(
+interface FetchArticleListResult {
+  articles: Article[]
+  totalCount: number
+}
+
+export const fetchArticlesList = createAsyncThunk<FetchArticleListResult, FetchArticlesListProps, ThunkConfig<string>>(
   'articlesPage/fetchArticlesList',
   async (_, thunkAPI) => {
     const { extra, rejectWithValue, getState, dispatch } = thunkAPI
@@ -46,9 +50,10 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
         throw new Error()
       }
 
-      dispatch(articlesPageActions.setTotalCount(Number(response.headers['x-total-count'])))
-
-      return response.data
+      return {
+        articles: response.data,
+        totalCount: Number(response.headers['x-total-count'])
+      }
     } catch {
       return rejectWithValue('Error')
     }

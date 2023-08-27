@@ -1,10 +1,7 @@
 import React from 'react'
 import { Button } from 'shared/ui/Button/Button'
 
-interface PageErrorProps {
-}
-
-export const PageError: React.FC<PageErrorProps> = () => {
+export const PageError = () => {
   const reloadPage = () => {
     window.location.reload()
   }
@@ -18,5 +15,3 @@ export const PageError: React.FC<PageErrorProps> = () => {
     </div>
   )
 }
-
-export default PageError

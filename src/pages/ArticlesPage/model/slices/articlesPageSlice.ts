@@ -36,9 +36,6 @@ const articlesPageSlice = createSlice({
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload
     },
-    setTotalCount: (state, action: PayloadAction<number>) => {
-      state.totalCount = action.payload
-    },
     setOrder: (state, action: PayloadAction<SortOrder>) => {
       state.order = action.payload
     },
@@ -74,10 +71,12 @@ const articlesPageSlice = createSlice({
       state.isLoading = false
 
       if (action.meta.arg.replace) {
-        articlesAdapter.setAll(state, action.payload)
+        articlesAdapter.setAll(state, action.payload.articles)
       } else {
-        articlesAdapter.addMany(state, action.payload)
+        articlesAdapter.addMany(state, action.payload.articles)
       }
+
+      state.totalCount = action.payload.totalCount
     })
     builder.addCase(fetchArticlesList.rejected, (state, action) => {
       state.isLoading = false

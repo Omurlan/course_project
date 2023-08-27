@@ -10,11 +10,7 @@ import {
 import { ArticleList } from 'widgets/ArticleList/ArticleList'
 import { Typography } from 'shared/ui/Typography/Typography'
 
-interface ArticleInfiniteListProps {
-
-}
-
-const ArticleInfiniteList: React.FC<ArticleInfiniteListProps> = () => {
+export const ArticleInfiniteList = () => {
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageIsLoading)
   const view = useSelector(getArticlesPageView)
@@ -32,5 +28,3 @@ const ArticleInfiniteList: React.FC<ArticleInfiniteListProps> = () => {
     />
   )
 }
-
-export default ArticleInfiniteList

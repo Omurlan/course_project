@@ -1,10 +1,9 @@
+import styles from './ArticleList.module.scss'
 import cn from 'classnames'
-import { useTranslation } from 'react-i18next'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { type Article, ArticleListItem, ArticleListItemSkeleton, ArticleView } from 'entities/Article'
 import { List, type ListRowProps, WindowScroller } from 'react-virtualized'
 import { PAGE_ID } from 'widgets/Page/Page'
-import styles from './ArticleList.module.scss'
 import { Typography } from 'shared/ui/Typography/Typography'
 
 interface ArticleListProps {
@@ -31,7 +30,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     virtualized = true,
     target
   } = props
-  const { t } = useTranslation()
 
   const isBig = view === ArticleView.DEFAULT
 

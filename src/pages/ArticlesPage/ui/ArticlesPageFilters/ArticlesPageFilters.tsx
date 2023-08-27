@@ -1,14 +1,15 @@
 import React, { type ChangeEvent, useCallback } from 'react'
 import cn from 'classnames'
-import { ArticleTypeTags, ArticleViewSelector } from 'features/Article'
-import { type ArticleSortField, ArticleSortSelector, ArticleType, type ArticleView } from 'entities/Article'
-import { Input } from 'shared/ui/Input/Input'
+import { ArticleSortSelector, ArticleTypeTags, ArticleViewSelector } from 'features/Article'
+/* eslint-disable */
+import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article'
 import { type SortOrder } from 'shared/types'
-import { type TagOption } from 'features/Article/ui/ArticleTypeTags/ArticleTypeTags'
+import { type TagOption } from 'features/Article'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { articlesPageActions } from '../../model/slices/articlesPageSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Input } from 'shared/ui/Input/Input'
+import { articlesPageActions } from '../../model/slices/articlesPageSlice'
 import { useSelector } from 'react-redux'
 import {
   getArticlesPageOrder, getArticlesPageSearch,

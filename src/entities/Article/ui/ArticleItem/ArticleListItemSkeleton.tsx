@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './ArticleListItem.module.scss'
 import cn from 'classnames'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { ArticleView } from '../../model/types/article'
 import { Card } from 'shared/ui/Card/Card'
+import { ArticleView } from '../../model/const/articleConst'
 
 interface ArticleListItemSkeletonProps {
   className?: string

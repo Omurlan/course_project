@@ -8,7 +8,7 @@ import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchN
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { useSearchParams } from 'react-router-dom'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
-import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 
 const reducers: ReducerList = {
   articlesPage: articlesPageReducer
