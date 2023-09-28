@@ -1,8 +1,7 @@
 import React, { type ChangeEvent, useCallback } from 'react'
 import cn from 'classnames'
 import { ArticleSortSelector, ArticleTypeTags, ArticleViewSelector } from 'features/Article'
-/* eslint-disable */
-import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article'
+import { type ArticleSortField, ArticleType, type ArticleView } from 'entities/Article'
 import { type SortOrder } from 'shared/types'
 import { type TagOption } from 'features/Article'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'

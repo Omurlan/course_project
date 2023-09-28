@@ -1,0 +1,8 @@
+.panel {
+  background: var(--bg-color-input);
+  position: absolute;
+  z-index: 1000;
+  padding: var(--spacing-xs);
+  min-width: 150px;
+  border-radius: var(--border-radius);
+}

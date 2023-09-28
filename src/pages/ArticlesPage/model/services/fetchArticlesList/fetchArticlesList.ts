@@ -23,7 +23,7 @@ interface FetchArticleListResult {
 export const fetchArticlesList = createAsyncThunk<FetchArticleListResult, FetchArticlesListProps, ThunkConfig<string>>(
   'articlesPage/fetchArticlesList',
   async (_, thunkAPI) => {
-    const { extra, rejectWithValue, getState, dispatch } = thunkAPI
+    const { extra, rejectWithValue, getState } = thunkAPI
     const limit = getArticlesPageLimit(getState())
 
     const sort = getArticlesPageSort(getState())

@@ -9,10 +9,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { AppLink } from 'shared/ui/Link/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Dropdown, type DropdownItem } from 'shared/ui/Dropdown/Dropdown'
+import { Dropdown, type DropdownItem } from 'shared/ui/Popups/ui/Dropdown/Dropdown'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { HStack } from 'shared/ui/Stack'
-import { getUserRoles } from 'entities/User/model/selectors/roleSelectors'
+import { IoIosNotificationsOutline } from 'react-icons/io'
+import { Typography } from 'shared/ui/Typography/Typography'
+import { Popover } from 'shared/ui/Popups'
 
 interface NavbarProps {
   className?: string
@@ -69,6 +71,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
         <HStack align="center" gap={4}>
           <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
+
+          <Popover direction="bottom left" trigger={<Button variant="ghost"><IoIosNotificationsOutline /></Button>} >
+            <Typography variant="body">lol</Typography>
+          </Popover>
 
           {authData && (
             <Dropdown

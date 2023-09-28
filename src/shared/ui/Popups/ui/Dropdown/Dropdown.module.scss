@@ -1,0 +1,19 @@
+.menu {
+  position: absolute;
+  box-shadow: var(--shadow-normal);
+  padding: var(--spacing-xs) 0;
+  min-width: 150px;
+  background: var(--bg-color-input);
+  border-radius: var(--border-radius);
+}
+
+.item {
+  color: var(--text-color);
+  height: 32px;
+  width: 100%;
+  text-align: start;
+  padding: 0 var(--spacing-sm);
+  background: var(--bg-color-input);
+  cursor: pointer;
+  border: none;
+}

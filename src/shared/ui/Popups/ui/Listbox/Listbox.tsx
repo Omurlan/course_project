@@ -2,7 +2,8 @@ import React, { Fragment } from 'react'
 import styles from './Listbox.module.scss'
 import { Listbox as HListbox } from '@headlessui/react'
 import cn from 'classnames'
-import { Input } from '../Input/Input'
+import { Input } from '../../../Input/Input'
+import popupStyles from '../../styles/popup.module.scss'
 
 export interface ListBoxItem<T extends string = string> {
   value: T
@@ -30,7 +31,7 @@ export const Listbox = <T extends string>(props: ListboxProps<T>) => {
 
   return (
     <HListbox
-      className={cn(styles.listbox, className)}
+      className={cn(styles.listbox, popupStyles.popup, className)}
       onChange={onChange}
       as="div"
       value={value}
@@ -49,8 +50,8 @@ export const Listbox = <T extends string>(props: ListboxProps<T>) => {
               <li
                 className={cn(styles.item, {
                   [styles.selected]: selected,
-                  [styles.disabled]: disabled,
-                  [styles.active]: active
+                  [popupStyles.disabled]: disabled,
+                  [popupStyles.active]: active
                 })}
               >
                 {item.title}
