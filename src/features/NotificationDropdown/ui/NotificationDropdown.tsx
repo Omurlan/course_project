@@ -6,7 +6,7 @@ import { IoIosNotificationsOutline } from 'react-icons/io'
 import { NotificationList } from 'entities/Notification'
 import { BrowserView, MobileView } from 'react-device-detect'
 import { Drawer } from 'shared/ui/Drawer/Drawer'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 
 interface NotificationDropdownProps {
   className?: string
@@ -42,9 +42,12 @@ export const NotificationDropdown = memo(({ className }: NotificationDropdownPro
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
+
       </MobileView>
     </>
   )
