@@ -1,20 +1,17 @@
-import React, { useState, memo } from 'react'
+import React, { useState, memo, useCallback } from 'react'
 import styles from './Navbar.module.scss'
 import cn from 'classnames'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useSidebar } from 'app/providers/SidebarProvider'
 import { Button } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 import { AppLink } from 'shared/ui/Link/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Dropdown, type DropdownItem } from 'shared/ui/Popups/ui/Dropdown/Dropdown'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { HStack } from 'shared/ui/Stack'
-import { IoIosNotificationsOutline } from 'react-icons/io'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { Popover } from 'shared/ui/Popups'
+import { AvatarDropdown } from 'features/AvatarDropdown'
+import { NotificationDropdown } from 'features/NotificationDropdown/ui/NotificationDropdown'
 
 interface NavbarProps {
   className?: string
@@ -22,47 +19,18 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { toggleState } = useSidebar()
-  const dispatch = useDispatch()
-  const isAdmin = useSelector(isUserAdmin)
-  const isManager = useSelector(isUserManager)
 
   const authData = useSelector(getUserAuthData)
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (): void => {
     setModalIsOpen(!modalIsOpen)
   }
 
-  const handleAuth = () => {
-    if (authData) {
-      dispatch(userActions.logout())
-    } else {
-      setModalIsOpen(true)
-    }
-  }
-
-  const isAdminPanelAvailable = isAdmin || isManager
-
-  const items: DropdownItem[] = [
-    {
-      content: 'Профиль',
-      href: authData && RoutePath.profile + authData.id
-    },
-    {
-      content: 'Выйти',
-      onClick: handleAuth
-    }
-  ]
-
-  if (isAdminPanelAvailable) {
-    items.unshift(
-      {
-        content: 'Админ панель',
-        href: RoutePath.admin_panel
-      }
-    )
-  }
+  const handleLogin = useCallback(() => {
+    setModalIsOpen(true)
+  }, [])
 
   return (
     <header className={cn(styles.navbar, className)}>
@@ -72,20 +40,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         <HStack align="center" gap={4}>
           <AppLink to={RoutePath.article_create}>Создать статью</AppLink>
 
-          <Popover direction="bottom left" trigger={<Button variant="ghost"><IoIosNotificationsOutline /></Button>} >
-            <Typography variant="body">lol</Typography>
-          </Popover>
-
-          {authData && (
-            <Dropdown
-              direction="bottom left"
-              items={items}
-              trigger={<Avatar size={30} src={authData?.avatar} />}
-            />
-          )}
+          <NotificationDropdown />
+          <AvatarDropdown />
 
           {!authData && (
-            <Button size="small" onClick={handleAuth}>
+            <Button size="small" onClick={handleLogin}>
               Войти
             </Button>
           )}

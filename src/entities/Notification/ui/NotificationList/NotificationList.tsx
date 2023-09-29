@@ -1,15 +1,34 @@
 import React from 'react'
-import styles from './NotificationList.module.scss'
 import cn from 'classnames'
+import { useNotifications } from '../../api/notificationApi'
+import { NotificationItem } from '../NotificationItem/NotificationItem'
+import { VStack } from 'shared/ui/Stack'
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 
 interface NotificationListProps {
-
+  className?: string
 }
 
-const NotificationList: React.FC<NotificationListProps> = () => {
+export const NotificationList: React.FC<NotificationListProps> = ({ className }) => {
+  const { data, isLoading } = useNotifications(null, {
+    pollingInterval: 10000
+  })
+
+  if (isLoading) {
+    return (
+      <VStack className={className}>
+        <Skeleton width="100%" height={100} />
+        <Skeleton width="100%" height={100} />
+        <Skeleton width="100%" height={100} />
+      </VStack>
+    )
+  }
+
   return (
-    <div></div>
+    <VStack className={className}>
+      {data?.map((item) => (
+        <NotificationItem key={item.id} item={item} />
+      ))}
+    </VStack>
   )
 }
-
-export default NotificationList

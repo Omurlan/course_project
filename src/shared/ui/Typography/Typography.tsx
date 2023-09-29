@@ -15,12 +15,12 @@ const variants: Record<Variants, Tags> = {
 type Colors = 'error' | 'default' | 'primary'
 
 interface TypographyProps extends ComponentProps<'p'> {
-  variant: Variants
+  variant?: Variants
   color?: Colors
 }
 
 export const Typography =
-    memo(({ variant, className, children, color = 'default', ...props }: TypographyProps) => {
+    memo(({ variant = 'body', className, children, color = 'default', ...props }: TypographyProps) => {
       const Tag = variants[variant]
 
       return (

@@ -14,7 +14,7 @@ import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type ScrollSaveSchema } from 'features/ScrollSave'
 import { type ArticlePageSchema } from 'pages/ArticlePage'
 import { type rtkApi } from 'shared/api/rtkApi'
-import { type ProfileSchema } from 'features/editableProfileCard'
+import { type ProfileSchema } from 'features/EditableProfileCard'
 
 export interface StateSchema {
   user: UserSchema
