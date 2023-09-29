@@ -1,6 +1,6 @@
 import { updateProfileData } from './updateProfileData'
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsynkThunk'
-import { Country, Currency } from 'shared/const/common'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsynkThunk'
+import { Country, Currency } from '@/shared/const/common'
 
 const profileData = {
   first: 'Firstname',

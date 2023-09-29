@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { ArticleList } from 'widgets/ArticleList/ArticleList'
-import { ArticleView } from 'entities/Article'
-import { VStack } from 'shared/ui/Stack'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { ArticleList } from '@/widgets/ArticleList/ArticleList'
+import { ArticleView } from '@/entities/Article'
+import { VStack } from '@/shared/ui/Stack'
 import { useArticleRecommendations } from '../../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsListProps {

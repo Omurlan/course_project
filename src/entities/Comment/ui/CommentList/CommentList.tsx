@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './CommentList.module.scss'
 import cn from 'classnames'
 import { type Comment } from '../../model/types/comment'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography/Typography'
 import { CommentCard } from '../CommentCard/CommentCard'
 
 interface CommentProps {

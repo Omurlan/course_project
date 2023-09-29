@@ -1,4 +1,4 @@
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
 export const getProfileData = (state: StateSchema) => state.profile?.data
 export const getProfileError = (state: StateSchema) => state.profile?.error ?? null

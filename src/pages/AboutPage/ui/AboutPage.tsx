@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from 'shared/ui/Button/Button'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { Page } from 'widgets/Page/Page'
+import { Button } from '@/shared/ui/Button/Button'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { Page } from '@/widgets/Page/Page'
 
 const AboutPage = () => {
   return (

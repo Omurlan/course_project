@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { Button } from 'shared/ui/Button/Button'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { Button } from '@/shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import {
   getProfileData,
@@ -10,9 +10,9 @@ import {
 import { profileActions } from '../../model/slice/profileSlice'
 import { validateProfileData } from '../../model/services/validateProfileData/validateProfileData'
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getUserAuthData } from 'entities/User'
-import { HStack } from 'shared/ui/Stack'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { getUserAuthData } from '@/entities/User'
+import { HStack } from '@/shared/ui/Stack'
 
 const TEST_ID_PREFIX = 'EditableProfileCardHeader'
 

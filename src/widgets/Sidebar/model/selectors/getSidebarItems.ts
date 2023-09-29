@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit'
-import { getUserAuthData } from 'entities/User'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { getUserAuthData } from '@/entities/User'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { BiHomeAlt2 as HomeIcon, BiNews as NewsIcon } from 'react-icons/bi'
 import { AiOutlineInfoCircle as AboutIcon } from 'react-icons/ai'
 import { type SidebarItemType } from '../types/sidebar'

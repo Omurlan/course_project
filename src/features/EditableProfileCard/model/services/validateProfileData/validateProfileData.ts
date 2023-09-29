@@ -1,5 +1,5 @@
-import type { Profile } from 'entities/Profile'
-import { validateForm, type ValidationForm } from 'shared/lib/validation/validateForm'
+import type { Profile } from '@/entities/Profile'
+import { validateForm, type ValidationForm } from '@/shared/lib/validation/validateForm'
 
 export const validateProfileData = (profile?: Profile): ValidationForm<keyof Profile> => {
   if (!profile) {

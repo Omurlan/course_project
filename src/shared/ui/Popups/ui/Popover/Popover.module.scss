@@ -1,8 +1,9 @@
 .panel {
   background: var(--bg-color-input);
   position: absolute;
-  z-index: 1000;
   padding: var(--spacing-xs);
   min-width: 150px;
   border-radius: var(--border-radius);
+  z-index: var(--modal-z-index);
+  box-shadow: var(--shadow-modal);
 }

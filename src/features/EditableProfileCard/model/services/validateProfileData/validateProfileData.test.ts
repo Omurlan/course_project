@@ -1,4 +1,4 @@
-import { Country, Currency } from 'shared/const/common'
+import { Country, Currency } from '@/shared/const/common'
 import { validateProfileData } from './validateProfileData'
 import { type Profile } from '../../../../../entities/Profile/model/types/profile'
 

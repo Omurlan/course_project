@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ArticleImageBlock.module.scss'
 import cn from 'classnames'
 import { type ArticleImageBlock as ArticleImage } from '../../model/types/article'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography/Typography'
 
 interface ArticleImageBlockProps {
   className?: string

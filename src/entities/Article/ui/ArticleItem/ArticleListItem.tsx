@@ -3,15 +3,15 @@ import styles from './ArticleListItem.module.scss'
 import cn from 'classnames'
 import { type Article, type ArticleTextBlock } from '../../model/types/article'
 import { ArticleView } from '../../model/const/articleConst'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography/Typography'
 import { AiOutlineEye as EyeIcon } from 'react-icons/ai'
-import { Card } from 'shared/ui/Card/Card'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Button } from 'shared/ui/Button/Button'
+import { Card } from '@/shared/ui/Card/Card'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Button } from '@/shared/ui/Button/Button'
 import { ArticleTextBlock as ArticleTextBlockComponent } from '../ArticleTextBlock/ArticleTextBlock'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { AppLink } from 'shared/ui/Link/AppLink'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { AppLink } from '@/shared/ui/Link/AppLink'
+import { HStack, VStack } from '@/shared/ui/Stack'
 
 interface ArticleListItemProps {
   className?: string
@@ -39,7 +39,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = (props) => {
             <img src={article.img} className={styles.img} alt={article.title} />
             <Typography className={styles.date} variant="caption" >{article.createdAt}</Typography>
           </div>
-          <HStack align="center" className={styles.infoWrapper}>
+          <HStack justify="between" align="center" className={styles.infoWrapper}>
             {types}
             {views}
           </HStack>

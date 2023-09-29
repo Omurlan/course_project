@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { Profile } from '../../../../entities/Profile/model/types/profile'
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { type ValidationForm } from 'shared/lib/validation/validateForm'
+import { type ValidationForm } from '@/shared/lib/validation/validateForm'
 import { type ProfileSchema } from '../types/editableProfileCardSchema'
 
 const initialState: ProfileSchema = {

@@ -2,9 +2,9 @@ import React from 'react'
 import styles from './NotificationItem.module.scss'
 import { type Notification } from '../../model/types/notification'
 import cn from 'classnames'
-import { Card } from 'shared/ui/Card/Card'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { AppLink } from 'shared/ui/Link/AppLink'
+import { Card } from '@/shared/ui/Card/Card'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { AppLink } from '@/shared/ui/Link/AppLink'
 
 interface NotificationItemProps {
   className?: string

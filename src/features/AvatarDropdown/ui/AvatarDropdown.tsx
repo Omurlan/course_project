@@ -1,10 +1,10 @@
 import React, { memo } from 'react'
-import { Dropdown } from 'shared/ui/Popups'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { Dropdown } from '@/shared/ui/Popups'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
-import { type DropdownItem } from 'shared/ui/Popups/ui/Dropdown/Dropdown'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
+import { type DropdownItem } from '@/shared/ui/Popups/ui/Dropdown/Dropdown'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
 interface AvatarButtonProps {
   className?: string

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ArticleTextBlock.module.scss'
 import cn from 'classnames'
 import { type ArticleTextBlock as ArticleText } from '../../model/types/article'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography/Typography'
 
 interface ArticleTextBlockProps {
   className?: string

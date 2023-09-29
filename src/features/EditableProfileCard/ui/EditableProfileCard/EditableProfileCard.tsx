@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect } from 'react'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
-import { AsyncReducer, type ReducerList } from 'shared/lib/components/AsyncReducer/AsyncReducer'
+import { AsyncReducer, type ReducerList } from '@/shared/lib/components/AsyncReducer/AsyncReducer'
 import {
   getProfileData, getProfileError,
   getProfileForm,
@@ -10,7 +10,7 @@ import {
 } from '../../model/selectors/editableProfileCardSelectors'
 import { profileReducer, profileActions } from '../../model/slice/profileSlice'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
-import { type Profile, ProfileCard } from 'entities/Profile'
+import { type Profile, ProfileCard } from '@/entities/Profile'
 import {
   EditableProfileCardHeader
 } from '../EditableProfileCardHeader/EditableProfileCardHeader'

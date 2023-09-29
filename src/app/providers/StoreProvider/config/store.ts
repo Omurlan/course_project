@@ -5,11 +5,11 @@ import {
   type ReducersMapObject
 } from '@reduxjs/toolkit'
 import { type StateSchema, type ThunkExtraArg } from './StateSchema'
-import { userReducer } from 'entities/User'
-import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
-import { $api } from 'shared/api/api'
-import { scrollSaveReducer } from 'features/ScrollSave'
-import { rtkApi } from 'shared/api/rtkApi'
+import { userReducer } from '@/entities/User'
+import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager'
+import { $api } from '@/shared/api/api'
+import { scrollSaveReducer } from '@/features/ScrollSave'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 export function createReduxStore (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducer: ReducersMapObject<StateSchema> = {

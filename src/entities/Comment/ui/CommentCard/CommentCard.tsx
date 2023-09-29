@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './CommentCard.module.scss'
 import { type Comment } from '../../model/types/comment'
 import cn from 'classnames'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { AppLink } from 'shared/ui/Link/AppLink'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { AppLink } from '@/shared/ui/Link/AppLink'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
 interface CommentCardProps {
   className?: string
@@ -31,7 +31,7 @@ export const CommentCard = React.memo(({ comment, isLoading, className }: Commen
   return (
     <div className={cn(styles.comment, className)}>
       <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
-        {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
+        {(Boolean(comment.user.avatar)) && <Avatar size={30} src={comment.user.avatar} />}
         <Typography variant="body">{comment.user.username}</Typography>
       </AppLink>
       <Typography variant="body">{comment.text}</Typography>

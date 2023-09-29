@@ -47,9 +47,8 @@
   --sidebar-width-collapsed: 80px;
 
   // z-index
-  --z-index-normal: 12;
-  --z-index-important: 13;
-  --z-index-overlay: 14;
+  --modal-z-index: 1000;
+  --overlay-z-index: 100;
 
   // тени
   --shadow-normal: 0 7px 10px rgba(0 0 0 / 10%);

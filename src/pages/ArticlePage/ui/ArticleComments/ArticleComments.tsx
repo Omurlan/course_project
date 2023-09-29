@@ -1,12 +1,12 @@
 import React, { Suspense, useCallback, useEffect } from 'react'
-import { Typography } from 'shared/ui/Typography/Typography'
-import { AddCommentForm } from 'features/AddCommentForm'
-import { CommentList } from 'entities/Comment'
+import { Typography } from '@/shared/ui/Typography/Typography'
+import { AddCommentForm } from '@/features/AddCommentForm'
+import { CommentList } from '@/entities/Comment'
 import { addCommentToArticle } from '../../model/services/addCommentToArticle/addCommentToArticle'
 import { useSelector } from 'react-redux'
 import { getArticleComments } from '../../model/slices/articlePageCommentsSlice'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
   fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'

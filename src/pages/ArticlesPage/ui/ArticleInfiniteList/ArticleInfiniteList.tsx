@@ -7,8 +7,8 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { ArticleList } from 'widgets/ArticleList/ArticleList'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { ArticleList } from '@/widgets/ArticleList/ArticleList'
+import { Typography } from '@/shared/ui/Typography/Typography'
 
 export const ArticleInfiniteList = () => {
   const articles = useSelector(getArticles.selectAll)

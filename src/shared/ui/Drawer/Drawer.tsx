@@ -3,7 +3,7 @@ import styles from './Drawer.module.scss'
 import cn from 'classnames'
 import { Portal } from '@headlessui/react'
 import { Overlay } from '../Overlay/Overlay'
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider'
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 
 const height = window.innerHeight - 100
 

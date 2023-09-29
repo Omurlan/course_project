@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ArticleCodeBlock.module.scss'
 import cn from 'classnames'
 import { type ArticleCodeBlock as ArticleCode } from '../../model/types/article'
-import Code from 'shared/ui/Code/Code'
+import Code from '@/shared/ui/Code/Code'
 
 interface ArticleCodeBlockProps {
   className?: string

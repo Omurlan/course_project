@@ -1,11 +1,11 @@
-import { renderWithWrapper, type renderWithWrapperOptions } from 'shared/lib/tests/renderWithWrapper/renderWithWrapper'
+import { renderWithWrapper, type renderWithWrapperOptions } from '@/shared/lib/tests/renderWithWrapper/renderWithWrapper'
 import { EditableProfileCard } from './EditableProfileCard'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { profileReducer } from '../../model/slice/profileSlice'
-import { type Profile } from 'entities/Profile'
-import { Country, Currency } from 'shared/const/common'
-import { $api } from 'shared/api/api'
+import { type Profile } from '@/entities/Profile'
+import { Country, Currency } from '@/shared/const/common'
+import { $api } from '@/shared/api/api'
 
 const profile: Profile = {
   id: '1',

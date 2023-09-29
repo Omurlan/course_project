@@ -1,6 +1,6 @@
 import React, { type ReactNode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
-import { type StateSchema, StoreProvider } from 'app/providers/StoreProvider'
+import { type StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 import { render } from '@testing-library/react'
 import { type ReducersMapObject } from '@reduxjs/toolkit'
 

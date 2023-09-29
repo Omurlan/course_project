@@ -18,7 +18,7 @@
   right: 0;
   background: rgb(0 0 0 / 22%);
   backdrop-filter: blur(2px);
-  z-index: var(--z-index-overlay);
+  z-index: var(--overlay-z-index);
 }
 
 @media screen and (max-width: 400px) {

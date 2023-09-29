@@ -9,7 +9,6 @@
 }
 
 .sheet {
-  z-index: var(--z-index-important);
   position: fixed;
   height: calc(100vh + 100px);
   width: 96vw;
@@ -22,5 +21,5 @@
 
 .opened {
   opacity: 1;
-  z-index: var(--z-index-important);
+  z-index: var(--modal-z-index);
 }

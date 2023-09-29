@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './ProfilePage.module.scss'
-import { Page } from 'widgets/Page/Page'
-import { EditableProfileCard } from 'features/EditableProfileCard'
+import { Page } from '@/widgets/Page/Page'
+import { EditableProfileCard } from '@/features/EditableProfileCard'
 import { useParams } from 'react-router-dom'
-import { Typography } from 'shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography/Typography'
 
 const ProfilePage = () => {
   const { id } = useParams<{ id: string }>()

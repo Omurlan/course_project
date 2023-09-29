@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './NotFoundPage.module.scss'
 import cn from 'classnames'
-import { Page } from 'widgets/Page/Page'
+import { Page } from '@/widgets/Page/Page'
 
 interface NotFoundPageProps {
 

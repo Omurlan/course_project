@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './ArticleViewSelector.module.scss'
-import { ArticleView } from 'entities/Article'
+import { ArticleView } from '@/entities/Article'
 import { type IconType } from 'react-icons'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
 import cn from 'classnames'
-import { Button } from 'shared/ui/Button/Button'
-import { HStack } from 'shared/ui/Stack'
+import { Button } from '@/shared/ui/Button/Button'
+import { HStack } from '@/shared/ui/Stack'
 
 interface ArticleViewSelectorProps {
   className?: string

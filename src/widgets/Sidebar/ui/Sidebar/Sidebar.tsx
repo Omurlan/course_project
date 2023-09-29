@@ -1,12 +1,12 @@
 import React, { useMemo, memo } from 'react'
 import styles from './Sidebar.module.scss'
 import cn from 'classnames'
-import { useSidebar } from 'app/providers/SidebarProvider'
+import { useSidebar } from '@/app/providers/SidebarProvider'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
-import { ThemeSwitcher } from 'features/ThemeSwitcher'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { useSelector } from 'react-redux'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { HStack, VStack } from '@/shared/ui/Stack'
 
 export const Sidebar = memo(() => {
   const { open, toggleState } = useSidebar()

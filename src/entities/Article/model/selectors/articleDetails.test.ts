@@ -1,5 +1,5 @@
 import { getArticleData, getArticleError, getArticleIsLoading } from '../selectors/articleDetails'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
 describe('articleDetails.test', () => {
   test('article reducer not defined', () => {

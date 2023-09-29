@@ -1,13 +1,13 @@
 import React, { type ComponentProps, type MutableRefObject, useLayoutEffect, useRef } from 'react'
 import styles from './Page.module.scss'
 import cn from 'classnames'
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getScrollSaveByPath, scrollSaveActions } from 'features/ScrollSave'
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { getScrollSaveByPath, scrollSaveActions } from '@/features/ScrollSave'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { type StateSchema } from 'app/providers/StoreProvider'
-import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle'
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 
 interface PageProps extends ComponentProps<'div'> {
   onScrollEnd?: () => void
