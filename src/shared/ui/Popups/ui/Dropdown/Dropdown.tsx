@@ -25,7 +25,7 @@ export const Dropdown = (props: DropdownProps) => {
 
   return (
     <Menu as="div" className={cn(styles.dropdown, popupStyles.popup, className)}>
-      <Menu.Button className={popupStyles.trigger}>
+      <Menu.Button as='div' className={popupStyles.trigger}>
         {trigger}
       </Menu.Button>
       <Menu.Items className={cn(styles.menu, mapDirectionClass[direction])}>

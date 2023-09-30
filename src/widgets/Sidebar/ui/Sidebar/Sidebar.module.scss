@@ -4,7 +4,6 @@
   left: 0;
   height: calc(100vh - var(--navbar-height));
   transition: 0.2s;
-  z-index: var(--modal-z-index);
 
   &.collapsed {
     left: calc(var(--sidebar-width) * -1);
@@ -21,6 +20,7 @@
     padding: var(--spacing-md);
     background: var(--bg-color);
     height: 100%;
+    z-index: var(--modal-z-index);
   }
 
   .switchers {
@@ -40,7 +40,7 @@
       right: 0;
       bottom: 0;
       top: 0;
-      z-index: var(--z-index-normal);
+      z-index: var(--overlay-z-index);
       transition: 0.2s;
     }
 

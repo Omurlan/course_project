@@ -1,0 +1,28 @@
+.modal {
+  position: absolute;
+  min-width: 350px;
+  background: var(--bg-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-modal);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0 0 0 / 22%);
+  backdrop-filter: blur(2px);
+  z-index: var(--overlay-z-index);
+}
+
+@media screen and (max-width: 400px) {
+  .modal {
+    width: 90%;
+  }
+}

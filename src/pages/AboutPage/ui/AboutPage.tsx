@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@/shared/ui/Button/Button'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { Page } from '@/widgets/Page/Page'
+import { Rating } from '@/shared/ui/Rating/Rating'
+import { RatingCard } from '@/entities/RatingCard/ui/RatingCard'
 
 const AboutPage = () => {
+  const [rating, setRating] = useState(0)
+
   return (
     <Page style={{ display: 'flex', gap: 15, flexWrap: 'wrap' }}>
+      <RatingCard hasFeedback feedbackTitle="Оставьте отзыв" title="Оцените статью" onRate={() => {}} />
+
       <Button>Default</Button>
       <Button disabled>Default disabled</Button>
 
