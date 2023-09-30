@@ -3,7 +3,7 @@ import styles from './Drawer.module.scss'
 import cn from 'classnames'
 import { Portal } from '@headlessui/react'
 import { Overlay } from '../Overlay/Overlay'
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 
 const height = window.innerHeight - 100
 
@@ -16,8 +16,6 @@ interface DrawerProps {
 
 const DrawerContent = memo((props: DrawerProps) => {
   const { children, onClose, isOpen, className } = props
-
-  console.log(isOpen)
 
   const { Spring, Gesture } = useAnimationLibs()
 
@@ -82,18 +80,22 @@ const DrawerContent = memo((props: DrawerProps) => {
   )
 })
 
-export const Drawer = memo(({ children, ...rest }: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
-
-  console.log(isLoaded)
 
   if (!isLoaded) {
     return null
   }
 
   return (
-    <DrawerContent {...rest}>
-      {children}
-    </DrawerContent>
+    <DrawerContent {...props} />
   )
-})
+}
+
+export const Drawer = (props: DrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  )
+}

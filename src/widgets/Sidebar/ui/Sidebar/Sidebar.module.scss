@@ -3,8 +3,8 @@
   width: var(--sidebar-width);
   left: 0;
   height: calc(100vh - var(--navbar-height));
-  background: var(--bg-color);
   transition: 0.2s;
+  z-index: var(--modal-z-index);
 
   &.collapsed {
     left: calc(var(--sidebar-width) * -1);
@@ -21,7 +21,6 @@
     padding: var(--spacing-md);
     background: var(--bg-color);
     height: 100%;
-    z-index: var(--modal-z-index);
   }
 
   .switchers {

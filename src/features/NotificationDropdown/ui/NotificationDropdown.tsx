@@ -42,11 +42,9 @@ export const NotificationDropdown = memo(({ className }: NotificationDropdownPro
       </BrowserView>
       <MobileView>
         {trigger}
-        <AnimationProvider>
-          <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
-            <NotificationList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
+          <NotificationList />
+        </Drawer>
 
       </MobileView>
     </>
