@@ -18,7 +18,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [".eslintrc.js", "config", "src", "webpack.config.ts", "scripts"],
+  "include": [".eslintrc.js", "config", "src", "webpack.config.ts", "scripts", "vite.config.ts"],
   "exclude": ["node_modules"],
   "ts-node": {
     "compilerOptions": {
