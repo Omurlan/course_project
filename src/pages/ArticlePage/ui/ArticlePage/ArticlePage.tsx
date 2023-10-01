@@ -8,6 +8,7 @@ import { ArticlePageHeader } from '../ArticlePageHeader/ArticlePageHeader'
 import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
 import ArticleComments from '../ArticleComments/ArticleComments'
+import { ArticleRating } from '@/features/Article'
 
 const reducers: ReducerList = {
   articlePage: articlePageReducer
@@ -16,12 +17,17 @@ const reducers: ReducerList = {
 const ArticlePage = memo(() => {
   const { id } = useParams<{ id: string }>()
 
+  if (!id) {
+    return null
+  }
+
   return (
     <AsyncReducer reducers={reducers} destroyOnUnmount>
       <Page>
         <VStack max gap={4}>
           <ArticlePageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleComments id={id} />
         </VStack>

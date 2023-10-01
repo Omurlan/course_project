@@ -1,12 +1,9 @@
 import React, { type ChangeEvent, memo, useCallback, useState } from 'react'
-import styles from './RatingCard.module.scss'
-import cn from 'classnames'
 import { Rating } from '@/shared/ui/Rating/Rating'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import { Card } from '@/shared/ui/Card/Card'
 import Modal from '@/shared/ui/Modal/Modal'
-import { Input } from '@/shared/ui/Input/Input'
 import { Button } from '@/shared/ui/Button/Button'
 import { TextArea } from '@/shared/ui/TextArea/TextArea'
 
@@ -14,35 +11,37 @@ interface RatingCardProps {
   hasFeedback?: boolean
   feedbackTitle?: string
   title: string
+  disabled?: boolean
+  initialRate?: number
   onRate: (value: number, feedback?: string) => void
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-  const { hasFeedback, onRate, feedbackTitle, title } = props
+  const { hasFeedback, onRate, feedbackTitle, title, initialRate = 0, disabled = false } = props
 
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(initialRate)
   const [isOpen, setIsOpen] = useState(false)
   const [feedback, setFeedback] = useState('')
 
-  const handleRate = (value: number) => {
-    setValue(value)
+  const handleRate = useCallback((rate: number) => {
+    setValue(rate)
 
     if (hasFeedback) {
       setIsOpen(true)
     } else {
-      onRate(value)
+      onRate(rate)
     }
-  }
+  }, [hasFeedback])
 
-  const handleFeedbackSubmit = (text: string) => {
-    onRate(value, text)
+  const handleFeedbackSubmit = useCallback(() => {
+    onRate(value, feedback)
     setIsOpen(false)
-  }
+  }, [feedback, value])
 
-  const handleFeedbackCancel = () => {
+  const handleFeedbackCancel = useCallback(() => {
     setIsOpen(false)
     onRate(value)
-  }
+  }, [value])
 
   const handleChangeFeedback = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     setFeedback(event.target.value)
@@ -51,8 +50,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
   return (
     <VStack>
       <Card>
-        <Typography variant="subheading">{title}</Typography>
-        <Rating value={value} onRate={handleRate} />
+        <VStack align="center">
+          <Typography variant="subheading">{title}</Typography>
+          <Rating disabled={Boolean(initialRate) || disabled} value={value} onRate={handleRate} />
+        </VStack>
       </Card>
 
       <Modal isOpen={isOpen} onClose={handleFeedbackCancel}>
@@ -65,7 +66,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
           <HStack justify="between">
             <Button onClick={handleFeedbackCancel} variant="ghost">Закрыть</Button>
-            <Button>Отправить</Button>
+            <Button onClick={handleFeedbackSubmit}>Отправить</Button>
           </HStack>
         </VStack>
       </Modal>

@@ -33,7 +33,6 @@
       "userId": "2"
     }
   ],
-
   "posts": [
     {
       "id": "1",
@@ -637,14 +636,18 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/7d4eb861-1f80-44da-b75e-7f365d0fc3da/220x330"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://img.gazeta.ru/files3/923/11732923/dicaprio-pic4_zoom-1500x1500-77929.jpg"
     }
   ],
@@ -670,6 +673,32 @@
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/7d4eb861-1f80-44da-b75e-7f365d0fc3da/220x330"
+    }
+  ],
+  "article-ratings": [
+    {
+      "rate": 4,
+      "articleId": "5",
+      "userId": "1",
+      "id": 1
+    },
+    {
+      "rate": 5,
+      "articleId": "6",
+      "userId": "1",
+      "id": 2
+    },
+    {
+      "rate": 3,
+      "articleId": "6",
+      "userId": "1",
+      "id": 3
+    },
+    {
+      "rate": 3,
+      "articleId": "1",
+      "userId": "1",
+      "id": 4
     }
   ]
 }

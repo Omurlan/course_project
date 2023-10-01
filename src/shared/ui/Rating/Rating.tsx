@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useCallback, useState } from 'react'
 import styles from './Rating.module.scss'
 import { AiOutlineStar as StarIcon } from 'react-icons/ai'
 import cn from 'classnames'
@@ -8,26 +8,33 @@ interface RatingProps {
   value: number
   onRate: (value: number) => void
   size?: number
+  disabled?: boolean
 }
 
 const stars = [1, 2, 3, 4, 5]
 
 export const Rating = memo((props: RatingProps) => {
-  const { onRate, className, value = 0 } = props
+  const { onRate, className, value = 0, disabled = false } = props
 
   const [hoveredValue, setHoveredValue] = useState(0)
 
-  const handleRate = (value: number) => () => {
-    onRate(value)
-  }
+  const handleRate = useCallback((value: number) => () => {
+    if (!disabled) {
+      onRate(value)
+    }
+  }, [disabled])
 
-  const handleMouseEnter = (value: number) => () => {
-    setHoveredValue(value)
-  }
+  const handleMouseEnter = useCallback((value: number) => () => {
+    if (!disabled) {
+      setHoveredValue(value)
+    }
+  }, [disabled])
 
-  const handleMouseLeave = (): void => {
-    setHoveredValue(0)
-  }
+  const handleMouseLeave = useCallback((): void => {
+    if (!disabled) {
+      setHoveredValue(0)
+    }
+  }, [disabled])
 
   return (
     <div className={cn(styles.rating, className)}>
