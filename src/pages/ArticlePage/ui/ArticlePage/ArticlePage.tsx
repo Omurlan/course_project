@@ -7,7 +7,7 @@ import { articlePageReducer } from '../../model/slices'
 import { ArticlePageHeader } from '../ArticlePageHeader/ArticlePageHeader'
 import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
-import ArticleComments from '../ArticleComments/ArticleComments'
+import { ArticleComments } from '../ArticleComments/ArticleComments'
 import { ArticleRating } from '@/features/Article'
 
 const reducers: ReducerList = {

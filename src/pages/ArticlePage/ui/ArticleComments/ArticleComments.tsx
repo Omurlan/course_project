@@ -15,7 +15,7 @@ interface ArticleCommentsProps {
   id?: string
 }
 
-const ArticleComments: React.FC<ArticleCommentsProps> = ({ id }) => {
+export const ArticleComments: React.FC<ArticleCommentsProps> = ({ id }) => {
   const comments = useSelector(getArticleComments.selectAll)
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
 
@@ -44,5 +44,3 @@ const ArticleComments: React.FC<ArticleCommentsProps> = ({ id }) => {
     </div>
   )
 }
-
-export default ArticleComments
