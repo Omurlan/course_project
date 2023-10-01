@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 
 const AdminPanelPage: React.FC = () => {
   return (

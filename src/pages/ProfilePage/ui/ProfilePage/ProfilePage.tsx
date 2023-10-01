@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ProfilePage.module.scss'
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 import { EditableProfileCard } from '@/features/EditableProfileCard'
 import { useParams } from 'react-router-dom'
 import { Typography } from '@/shared/ui/Typography/Typography'

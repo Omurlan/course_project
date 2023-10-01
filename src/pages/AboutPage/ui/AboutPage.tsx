@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Button } from '@/shared/ui/Button/Button'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { Page } from '@/widgets/Page/Page'
-import { Rating } from '@/shared/ui/Rating/Rating'
-import { RatingCard } from '@/entities/RatingCard/ui/RatingCard'
+import { Page } from '@/widgets/Page'
+import { RatingCard } from '@/entities/RatingCard'
 
 const AboutPage = () => {
   const [rating, setRating] = useState(0)

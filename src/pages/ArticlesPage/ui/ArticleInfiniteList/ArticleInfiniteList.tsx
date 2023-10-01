@@ -7,7 +7,7 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { ArticleList } from '@/widgets/ArticleList/ArticleList'
+import { ArticleList } from '@/widgets/ArticleList'
 import { Typography } from '@/shared/ui/Typography/Typography'
 
 export const ArticleInfiniteList = () => {

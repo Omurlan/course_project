@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from '@/shared/ui/Input/Input'
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 
 const MainPage = () => {
   return (

@@ -21,6 +21,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'relative-path-checker-omurlan'],
   rules: {
     'relative-path-checker-omurlan/path-checker': [2, { alias: '@/' }],
+    'relative-path-checker-omurlan/public-api-imports': [2, { alias: '@/' }],
     '@typescript-eslint/no-non-null-assertion': [1],
     'max-len': [
       2,

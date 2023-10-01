@@ -11,7 +11,7 @@ import { AppLink } from '@/shared/ui/Link/AppLink'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { HStack } from '@/shared/ui/Stack'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
-import { NotificationDropdown } from '@/features/NotificationDropdown/ui/NotificationDropdown'
+import { NotificationDropdown } from '@/features/NotificationDropdown'
 
 interface NavbarProps {
   className?: string

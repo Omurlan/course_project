@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ForbiddenPage.module.scss'
 import cn from 'classnames'
 import { Typography } from '@/shared/ui/Typography/Typography'
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 
 interface ForbiddenPageProps {
 

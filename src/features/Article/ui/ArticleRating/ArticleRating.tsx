@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { RatingCard } from '@/entities/RatingCard/ui/RatingCard'
+import { RatingCard } from '@/entities/RatingCard'
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
