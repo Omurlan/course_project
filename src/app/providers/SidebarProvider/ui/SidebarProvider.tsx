@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren, useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { SidebarContext } from '@/app/providers/SidebarProvider/lib/SidebarContext'
+import { SidebarContext } from '@/shared/lib/context/SidebarContext'
 
 export const SidebarProvider: FC<PropsWithChildren> = ({ children }) => {
   const [open, setOpen] = useState(true)

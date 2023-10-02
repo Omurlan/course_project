@@ -1,7 +1,7 @@
 import React, { useMemo, memo } from 'react'
 import styles from './Sidebar.module.scss'
 import cn from 'classnames'
-import { useSidebar } from '@/app/providers/SidebarProvider'
+import { useSidebar } from '@/shared/lib/hooks/useSidebar/useSidebar'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { useSelector } from 'react-redux'

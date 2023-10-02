@@ -1,8 +1,8 @@
 import React from 'react'
 import cn from 'classnames'
 import '@/app/styles/index.scss'
-import { type Theme } from '@/app/providers/ThemeProvider'
 import { type Decorator } from '@storybook/react'
+import {Theme} from "@/shared/const/theme";
 
 interface ThemeDecoratorProps {
 

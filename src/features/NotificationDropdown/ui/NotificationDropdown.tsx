@@ -6,7 +6,6 @@ import { IoIosNotificationsOutline } from 'react-icons/io'
 import { NotificationList } from '@/entities/Notification'
 import { BrowserView, MobileView } from 'react-device-detect'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
 
 interface NotificationDropdownProps {
   className?: string

@@ -3,3 +3,4 @@ export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelecto
 export { ArticleTypeTags, type TagOption } from './ui/ArticleTypeTags/ArticleTypeTags'
 export { ArticleRating } from './ui/ArticleRating/ArticleRating.async'
 export { type Rating } from './model/types/types'
+export { useArticleRecommendations } from './api/articleRecommendationsApi'

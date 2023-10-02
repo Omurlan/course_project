@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from 'react'
 import './styles/index.scss'
-import Router from '@/app/router/ui/Router'
+import { Router } from './router'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
 import { useDispatch, useSelector } from 'react-redux'

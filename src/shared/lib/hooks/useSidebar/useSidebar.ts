@@ -1,8 +1,5 @@
 import { useContext } from 'react'
-import {
-  SidebarContext,
-  type SidebarContextProps
-} from '@/app/providers/SidebarProvider/lib/SidebarContext'
+import { SidebarContext, type SidebarContextProps } from '../../context/SidebarContext'
 
 export const useSidebar = (): SidebarContextProps => {
   const { open, toggleState } = useContext(SidebarContext)
