@@ -9,9 +9,9 @@ import { Card } from '@/shared/ui/Card/Card'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Button } from '@/shared/ui/Button/Button'
 import { ArticleTextBlock as ArticleTextBlockComponent } from '../ArticleTextBlock/ArticleTextBlock'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { AppLink } from '@/shared/ui/Link/AppLink'
 import { HStack, VStack } from '@/shared/ui/Stack'
+import { RoutePath } from '@/shared/const/router'
 
 interface ArticleListItemProps {
   className?: string

@@ -6,7 +6,8 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Typography } from '@/shared/ui/Typography/Typography'
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 import { AppLink } from '@/shared/ui/Link/AppLink'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+
+import { RoutePath } from '@/shared/const/router'
 
 interface CommentCardProps {
   className?: string

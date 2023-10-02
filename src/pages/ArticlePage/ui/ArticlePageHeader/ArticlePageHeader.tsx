@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react'
 import { Button } from '@/shared/ui/Button/Button'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getCanEditArticle } from '../../model/selectors/article'
 import { getArticleData } from '@/entities/Article'
 import { HStack } from '@/shared/ui/Stack'
+import { RoutePath } from '@/shared/const/router'
 
 interface ArticlePageHeaderProps {
 
