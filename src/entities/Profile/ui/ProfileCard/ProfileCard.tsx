@@ -1,12 +1,12 @@
 import React, { type ChangeEvent, useCallback } from 'react'
 import styles from './ProfileCard.module.scss'
 import cn from 'classnames'
-import { Typography } from '@/shared/ui/Typography/Typography'
-import { Input } from '@/shared/ui/Input/Input'
+import { Typography } from '@/shared/ui/Typography'
+import { Input } from '@/shared/ui/Input'
 import { type Profile } from '../../model/types/profile'
-import { type ChangeEventSelect, Select, type SelectOption } from '@/shared/ui/Select/Select'
+import { type ChangeEventSelect, Select, type SelectOption } from '@/shared/ui/Select'
 import { Country, Currency } from '@/shared/const/common'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Avatar } from '@/shared/ui/Avatar'
 import { type ValidationForm } from '@/shared/lib/validation/validateForm'
 
 interface ProfileCardProps {

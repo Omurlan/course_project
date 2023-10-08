@@ -4,7 +4,7 @@ import { ArticleView } from '@/entities/Article'
 import { type IconType } from 'react-icons'
 import { CiGrid2H, CiGrid41 } from 'react-icons/ci'
 import cn from 'classnames'
-import { Button } from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 
 interface ArticleViewSelectorProps {

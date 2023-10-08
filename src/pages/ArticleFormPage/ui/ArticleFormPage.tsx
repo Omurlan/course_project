@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import { Page } from '@/widgets/Page'
 import { useParams } from 'react-router-dom'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography'
 
 interface ArticleFormPageProps {
 

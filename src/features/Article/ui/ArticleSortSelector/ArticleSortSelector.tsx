@@ -1,7 +1,7 @@
 import React, { useCallback, memo } from 'react'
 import cn from 'classnames'
 import styles from './ArticleSortSelector.module.scss'
-import { type ChangeEventSelect, Select, type SelectOption } from '@/shared/ui/Select/Select'
+import { type ChangeEventSelect, Select, type SelectOption } from '@/shared/ui/Select'
 import { ArticleSortField } from '@/entities/Article'
 import { type SortOrder } from '@/shared/types'
 import { HStack } from '@/shared/ui/Stack'

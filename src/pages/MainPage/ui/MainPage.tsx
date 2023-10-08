@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input } from '@/shared/ui/Input/Input'
+import { Input } from '@/shared/ui/Input'
 import { Page } from '@/widgets/Page'
 
 const MainPage = () => {

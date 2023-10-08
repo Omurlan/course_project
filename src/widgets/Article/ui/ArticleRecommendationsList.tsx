@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography'
 import { ArticleList } from './ArticleList'
 import { ArticleView } from '@/entities/Article'
 import { VStack } from '@/shared/ui/Stack'

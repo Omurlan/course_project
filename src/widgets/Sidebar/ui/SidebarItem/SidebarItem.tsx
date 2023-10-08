@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import styles from './SidebarItem.module.scss'
 import cn from 'classnames'
-import { AppLink } from '@/shared/ui/Link/AppLink'
+import { AppLink } from '@/shared/ui/AppLink'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'

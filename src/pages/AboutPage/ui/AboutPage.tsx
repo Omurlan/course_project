@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Button } from '@/shared/ui/Button/Button'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { Button } from '@/shared/ui/Button'
+import { Typography } from '@/shared/ui/Typography'
 import { Page } from '@/widgets/Page'
 import { RatingCard } from '@/entities/RatingCard'
 

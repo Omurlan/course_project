@@ -22,5 +22,3 @@ export const Modal: React.FC<LoginModalProps> = ({ children, isOpen, onClose, cl
     </RModal>
   )
 }
-
-export default Modal

@@ -2,7 +2,7 @@ import styles from './ArticleList.module.scss'
 import cn from 'classnames'
 import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { type Article, ArticleListItem, ArticleListItemSkeleton, ArticleView } from '@/entities/Article'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography'
 
 interface ArticleListProps {
   className?: string

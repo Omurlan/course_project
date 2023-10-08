@@ -1,11 +1,11 @@
 import React, { type ChangeEvent, memo, useCallback, useState } from 'react'
-import { Rating } from '@/shared/ui/Rating/Rating'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { Rating } from '@/shared/ui/Rating'
+import { Typography } from '@/shared/ui/Typography'
 import { HStack, VStack } from '@/shared/ui/Stack'
-import { Card } from '@/shared/ui/Card/Card'
-import Modal from '@/shared/ui/Modal/Modal'
-import { Button } from '@/shared/ui/Button/Button'
-import { TextArea } from '@/shared/ui/TextArea/TextArea'
+import { Card } from '@/shared/ui/Card'
+import { Modal } from '@/shared/ui/Modal'
+import { Button } from '@/shared/ui/Button'
+import { TextArea } from '@/shared/ui/TextArea'
 
 interface RatingCardProps {
   hasFeedback?: boolean

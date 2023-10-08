@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
-import { Typography } from '@/shared/ui/Typography/Typography'
-import { Button } from '@/shared/ui/Button/Button'
+import { Typography } from '@/shared/ui/Typography'
+import { Button } from '@/shared/ui/Button'
 import { useSelector } from 'react-redux'
 import {
   getProfileData,

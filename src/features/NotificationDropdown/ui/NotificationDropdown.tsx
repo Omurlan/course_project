@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useState } from 'react'
 import styles from './NotificationDropdown.module.scss'
 import { Popover } from '@/shared/ui/Popups'
-import { Button } from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/Button'
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { NotificationList } from '@/entities/Notification'
 import { BrowserView, MobileView } from 'react-device-detect'
-import { Drawer } from '@/shared/ui/Drawer/Drawer'
+import { Drawer } from '@/shared/ui/Drawer'
 
 interface NotificationDropdownProps {
   className?: string

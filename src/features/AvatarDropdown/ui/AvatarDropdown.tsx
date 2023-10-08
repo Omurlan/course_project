@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 import { Dropdown } from '@/shared/ui/Popups'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Avatar } from '@/shared/ui/Avatar'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
-import { type DropdownItem } from '@/shared/ui/Popups/ui/Dropdown/Dropdown'
+import { type DropdownItem } from '@/shared/ui/Popups'
 
 import { RoutePath } from '@/shared/const/router'
 

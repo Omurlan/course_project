@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import cn from 'classnames'
 import { type ArticleType } from '@/entities/Article'
-import { Tag } from '@/shared/ui/Tag/Tag'
+import { Tag } from '@/shared/ui/Tag'
 import { HStack } from '@/shared/ui/Stack'
 
 export interface TagOption {

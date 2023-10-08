@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Button } from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/Button'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getCanEditArticle } from '../../model/selectors/article'

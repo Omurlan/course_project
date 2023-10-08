@@ -2,7 +2,7 @@ import { Menu } from '@headlessui/react'
 import styles from './Dropdown.module.scss'
 import cn from 'classnames'
 import { Fragment, type ReactNode } from 'react'
-import { AppLink } from '../../../Link/AppLink'
+import { AppLink } from '../../../AppLink'
 import { type DropdownDirection, mapDirectionClass } from '../../styles/consts'
 import popupStyles from '../../styles/popup.module.scss'
 

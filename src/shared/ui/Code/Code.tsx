@@ -9,7 +9,7 @@ interface CodeProps {
   code: string
 }
 
-const Code = React.memo(({ code, className }: CodeProps) => {
+export const Code = React.memo(({ code, className }: CodeProps) => {
   const onCopy = () => {
     window.navigator.clipboard.writeText(code)
   }
@@ -25,5 +25,3 @@ const Code = React.memo(({ code, className }: CodeProps) => {
     </pre>
   )
 })
-
-export default Code

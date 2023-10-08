@@ -1,5 +1,5 @@
 import React, { Suspense, useCallback, useEffect } from 'react'
-import { Typography } from '@/shared/ui/Typography/Typography'
+import { Typography } from '@/shared/ui/Typography'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { addCommentToArticle } from '../../model/services/addCommentToArticle/addCommentToArticle'
